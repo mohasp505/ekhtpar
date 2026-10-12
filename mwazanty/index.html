@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>موازنتي | افهم الموازنة</title>
+<meta name="description" content="نموذج تفاعلي طلابي لتبسيط فهم موازنة المواطن 2026/2027 وتعزيز الشفافية والمشاركة المجتمعية.">
+<style>
+:root{--navy:#071c2e;--navy2:#0b2d45;--green:#00a477;--green2:#0b8d72;--mint:#dff7ee;--gold:#efb64a;--bg:#f4f7f8;--card:#fff;--text:#10202c;--muted:#6c7b84;--line:#e4ebee;--danger:#c95353;--shadow:0 18px 50px rgba(7,28,46,.10);--r:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(#eef4f5 0,#f7f9fa 260px,var(--bg) 100%);font-family:"Cairo","Tajawal","Segoe UI",Tahoma,Arial,sans-serif;color:var(--text);line-height:1.65}button,input{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
+.app{max-width:1180px;margin:auto;min-height:100vh;padding-bottom:98px}.top{padding:14px 18px 0}.notice{background:linear-gradient(135deg,#08253a,#104968);color:#fff;border-radius:20px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:12px;box-shadow:var(--shadow)}.notice span{opacity:.78}.close{border:0;background:rgba(255,255,255,.1);color:#fff;border-radius:10px;padding:6px 10px}
+.header{padding:18px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px}.logo{width:50px;height:50px;border-radius:16px;background:linear-gradient(145deg,#0aa77e,#07556c);box-shadow:0 10px 25px rgba(0,164,119,.24);display:grid;place-items:center;flex:0 0 auto}.logo svg{width:37px;height:37px}.brand-title{font-weight:900;font-size:22px;letter-spacing:-.5px}
+.brand-title{background:linear-gradient(90deg,#072238 0%,#00a477 55%,#0b5267 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:24px;letter-spacing:-1px}
+.brand-title:after{content:"";display:block;width:30px;height:3px;margin-top:2px;border-radius:99px;background:linear-gradient(90deg,#efb64a,#00a477)}
+.brand-sub{display:block;color:var(--muted);font-size:11px;margin-top:1px}.head-actions{display:flex;gap:8px}.ghost{background:#fff;border:1px solid var(--line);border-radius:13px;padding:9px 12px;color:#49606d;font-weight:800}
+.main{padding:0 18px}.hero{background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.12),transparent 28%),linear-gradient(145deg,#072238,#0b405a);border-radius:32px;color:#fff;overflow:hidden;box-shadow:0 25px 70px rgba(7,28,46,.24);display:grid;grid-template-columns:1.05fr .95fr;gap:10px;padding:34px;position:relative}.hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid rgba(255,255,255,.10);border-radius:50%;left:-90px;bottom:-130px;box-shadow:0 0 0 45px rgba(255,255,255,.025),0 0 0 90px rgba(255,255,255,.02)}.eyebrow{display:inline-flex;padding:7px 11px;border-radius:999px;background:rgba(0,164,119,.16);border:1px solid rgba(111,255,211,.18);font-size:11px;font-weight:900;color:#a9ffe3;margin-bottom:16px}.hero h1{font-size:clamp(34px,5vw,57px);line-height:1.12;margin:0 0 13px;letter-spacing:-1.4px}.hero h1 em{font-style:normal;color:#5de8bc}.hero p{margin:0;color:#cfdee6;max-width:650px;font-size:15px}.hero-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:23px}.btn{border:0;border-radius:14px;padding:12px 16px;font-weight:900}.primary{background:var(--green);color:#fff;box-shadow:0 12px 25px rgba(0,164,119,.24)}.secondary{background:#fff;color:var(--navy)}
+.hero-device{display:flex;align-items:center;justify-content:center;position:relative;z-index:1}.phone{width:285px;border-radius:35px;background:#f7fbfb;border:7px solid rgba(255,255,255,.22);box-shadow:0 28px 65px rgba(0,0,0,.27);padding:12px;transform:rotate(-2deg)}.speaker{width:70px;height:5px;background:#dfe9eb;border-radius:9px;margin:0 auto 11px}.screen{background:#eef6f4;border-radius:26px;padding:13px}.mini-nav{display:flex;justify-content:space-between;align-items:center;color:#42605e;font-size:10px;margin-bottom:10px}.mini-title{font-weight:900;font-size:15px}.mini-total{background:linear-gradient(145deg,#087e62,#0aa77e);color:#fff;border-radius:18px;padding:13px}.mini-total small{opacity:.8}.mini-total b{display:block;font-size:27px}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.mini-item{background:#fff;border:1px solid #e6eeee;border-radius:14px;padding:9px}.mini-item strong{font-size:17px}.mini-item span{font-size:9px;color:#7c8a90;display:block}.bar{height:6px;background:#dfeae8;border-radius:99px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:99px}
+.section{padding:44px 0 0}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px}.kicker{font-size:11px;color:var(--green2);font-weight:900}.section h2{margin:1px 0 3px;font-size:28px;letter-spacing:-.6px}.section-head p{margin:0;color:var(--muted);font-size:12px}.chip{background:#fff;border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#62717a;font-size:10px;font-weight:900}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.q{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 8px 26px rgba(7,28,46,.05);transition:.2s}.q:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.q .qicon{width:42px;height:42px;border-radius:13px;background:var(--mint);display:grid;place-items:center;font-size:21px;margin-bottom:12px}.q h3{margin:0 0 4px;font-size:15px}.q p{margin:0;color:var(--muted);font-size:11px}.q button{margin-top:13px;background:none;border:0;padding:0;color:var(--green2);font-size:11px;font-weight:900}
+.metrics{display:grid;grid-template-columns:1.15fr .85fr;gap:13px}.metric-card,.chart-card,.play,.dictionary,.participation,.source{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 8px 28px rgba(7,28,46,.05)}.metric-main{background:linear-gradient(145deg,#072238,#0a5267);color:#fff;border-radius:19px;padding:21px}.metric-main small{opacity:.72}.metric-main b{display:block;font-size:37px;margin:4px 0}.metric-main .desc{color:#c8dce3;font-size:11px}.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.stat{padding:13px;background:#f7faf9;border-radius:15px;border:1px solid #edf2f1}.stat b{font-size:18px}.stat span{display:block;color:var(--muted);font-size:10px}.stat em{font-style:normal;font-size:9px;color:var(--green2)}
+.alloc{display:grid;gap:11px}.alloc-row{display:grid;grid-template-columns:100px 1fr auto;gap:9px;align-items:center;font-size:11px}.alloc-label{font-weight:900}.alloc-track{height:9px;background:#edf2f1;border-radius:99px;overflow:hidden}.alloc-track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#079b75,#34caa2)}.alloc-val{font-weight:900;color:#49616a}.legend{margin-top:15px;display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:10px}.legend span:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-left:5px}
+.tabs{display:flex;gap:7px;overflow:auto;padding-bottom:3px;margin-bottom:13px}.tab{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-size:10px;font-weight:900;color:#62717a}.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.budget-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;position:relative;overflow:hidden}.budget-card:after{content:"";position:absolute;width:72px;height:72px;border-radius:22px;background:var(--mint);left:-20px;top:-20px;opacity:.65}.budget-card h3{margin:0 0 3px;position:relative;z-index:1}.budget-card p{margin:0;color:var(--muted);font-size:10px;position:relative;z-index:1}.budget-number{font-size:26px;font-weight:900;margin-top:14px;position:relative;z-index:1}.budget-unit{color:#78858b;font-size:10px}.delta{display:inline-block;margin-top:8px;background:#e8f8f2;color:#13795f;border-radius:999px;padding:5px 8px;font-size:9px;font-weight:900}
+.play{background:linear-gradient(145deg,#fbfffd,#eef8f5);border-color:#d9eee6}.game{display:grid;grid-template-columns:.9fr 1.1fr;gap:15px;align-items:center}.balance{background:var(--navy);color:#fff;border-radius:20px;padding:18px}.balance small{opacity:.65}.balance b{font-size:32px;display:block;margin:4px 0}.money-row{display:flex;justify-content:space-between;font-size:10px;color:#cbe0e5}.slider-row{background:#fff;border:1px solid var(--line);border-radius:15px;padding:11px;margin:7px 0}.slider-row label{display:flex;justify-content:space-between;font-size:10px;font-weight:900}.slider-row input{width:100%}.result{background:#eef7f4;border-radius:16px;padding:13px;margin-top:10px;font-size:10px}.result b{color:var(--green2)}
+.dictionary{display:grid;grid-template-columns:1fr 1fr;gap:12px}.term{padding:16px;border:1px solid var(--line);border-radius:17px;background:#fbfcfc}.term h3{margin:0;font-size:15px}.term p{margin:6px 0 0;color:var(--muted);font-size:11px}.ask{grid-column:1/-1;display:flex;gap:8px}.ask input{flex:1;border:1px solid var(--line);border-radius:13px;padding:11px}.ask button{border:0;background:var(--green);color:#fff;border-radius:13px;padding:0 16px;font-weight:900}
+.participation{background:linear-gradient(145deg,#072238,#0b425a);color:#fff}.part-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.part-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.09);border-radius:17px;padding:15px}.part-item b{font-size:24px}.part-item span{display:block;color:#c6dbe2;font-size:10px}.part-note{font-size:11px;color:#c9dde5;margin-top:12px}.source{margin-top:15px;background:#f9fbfb}.source h3{margin:0 0 7px;font-size:13px}.source p{margin:0;color:var(--muted);font-size:10px}.source .tag{display:inline-block;margin-top:10px;background:#fff;border:1px solid var(--line);padding:7px 9px;border-radius:999px;font-size:9px;font-weight:900;color:#52656e}
+.footer{margin:45px 0 0;padding:0 18px;color:#7c8a91;font-size:9px;text-align:center}.bottom{position:fixed;z-index:30;bottom:15px;left:50%;transform:translateX(-50%);width:min(600px,calc(100% - 28px));background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border:1px solid #dde7e8;box-shadow:0 18px 55px rgba(7,28,46,.18);border-radius:22px;padding:9px;display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.bottom a{display:grid;place-items:center;gap:2px;padding:8px 2px;border-radius:15px;color:#708089;font-size:8px;font-weight:900}.bottom a.active{background:#e8f7f2;color:var(--green2)}.bottom svg{width:19px;height:19px}
+.toast{position:fixed;left:50%;top:18px;transform:translate(-50%,-130%);background:#092238;color:#fff;padding:11px 15px;border-radius:13px;font-size:11px;box-shadow:var(--shadow);z-index:80;transition:.25s}.toast.show{transform:translate(-50%,0)}
+.hidden{display:none!important}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-device{display:none}.quick{grid-template-columns:1fr 1fr}.metrics,.game{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.part-grid{grid-template-columns:1fr 1fr}}
+
+/* === موازنتي | احتياج المواطن: إضافات النسخة التشاركية === */
+.need-hero{margin-top:12px;background:linear-gradient(135deg,#ffffff,#f0f8f5);border:1px solid #dcece7;border-radius:26px;padding:20px;position:relative;overflow:hidden}.need-hero:before{content:"";position:absolute;width:190px;height:190px;border:1px solid #dceee9;border-radius:50%;left:-80px;bottom:-100px}.need-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch}.flow-card{background:#072238;color:#fff;border-radius:21px;padding:20px}.flow-card .flow-title{font-size:20px;font-weight:900;margin-bottom:6px}.flow-card p{margin:0;color:#c8dce4;font-size:11px}.flow-line{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:17px;align-items:center}.flow-node{min-height:58px;border-radius:13px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;text-align:center;padding:5px;font-size:9px;font-weight:900}.flow-arrow{color:#68e8c2;font-weight:900;text-align:center}.need-callouts{display:grid;gap:9px}.callout{background:#fff;border:1px solid var(--line);border-radius:17px;padding:14px}.callout b{display:block;font-size:13px}.callout span{display:block;color:var(--muted);font-size:10px;margin-top:3px}.tag-official{display:inline-flex;align-items:center;gap:5px;background:#edf9f5;border:1px solid #d4efe5;color:#11755c;border-radius:999px;padding:6px 8px;font-size:9px;font-weight:900}.tag-demo{display:inline-flex;align-items:center;gap:5px;background:#fff7e6;border:1px solid #f1dfb4;color:#8b671e;border-radius:999px;padding:6px 8px;font-size:9px;font-weight:900}
+.section.dark-section{background:linear-gradient(145deg,#061d2f,#0a3d55);border-radius:30px;padding:28px;margin-top:44px;color:#fff;box-shadow:0 20px 55px rgba(7,28,46,.16)}.dark-section .section-head p{color:#bed2db}.dark-section .kicker{color:#71e7c3}.dark-section .chip{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.11);color:#d9e7eb}
+.need-layout{display:grid;grid-template-columns:1fr .9fr;gap:13px}.form-card,.province-card,.analytics-card,.track-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 7px 25px rgba(7,28,46,.05)}.dark-section .form-card,.dark-section .analytics-card{background:rgba(255,255,255,.97)}.field{display:grid;gap:6px;margin-bottom:11px}.field label{font-size:10px;font-weight:900;color:#3f5560}.field select,.field input,.field textarea{border:1px solid #dfe8eb;border-radius:13px;padding:11px 12px;outline:none;background:#fbfdfd;color:var(--text)}.field textarea{min-height:90px;resize:vertical}.field select:focus,.field input:focus,.field textarea:focus{border-color:#82cdb9;box-shadow:0 0 0 3px rgba(0,164,119,.08)}.form-actions{display:flex;gap:8px;flex-wrap:wrap}.small-btn{border:0;border-radius:13px;padding:10px 13px;font-size:10px;font-weight:900}.full-btn{width:100%;padding:12px}.secondary-lite{background:#eef6f4;color:#1d6f5b}.need-note{background:#f6faf9;border:1px dashed #cfe7df;border-radius:15px;padding:12px;font-size:10px;color:#59707a}.needs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}.need-stat{background:#f7faf9;border:1px solid #e9efee;border-radius:14px;padding:11px;text-align:center}.need-stat b{font-size:20px;display:block}.need-stat span{font-size:9px;color:var(--muted)}
+.province-head{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}.province-search{position:relative}.province-search input{width:100%;border:1px solid var(--line);border-radius:13px;padding:10px 12px}.province-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:11px}.province-btn{background:#fbfdfd;border:1px solid #e4ecee;border-radius:14px;padding:10px 8px;text-align:right;font-weight:900;font-size:10px;color:#304b57;transition:.18s}.province-btn:hover{transform:translateY(-2px);border-color:#9ad3c4;background:#f3fbf8}.province-btn.active{background:#072238;color:#fff;border-color:#072238}.province-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:9px;color:#71818a;font-size:9px}.priority-box{margin-top:11px;background:#eef7f4;border-radius:16px;padding:14px}.priority-title{display:flex;justify-content:space-between;gap:8px;align-items:center}.priority-title b{font-size:13px}.priority-list{display:grid;gap:7px;margin-top:10px}.priority-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:9px 10px;background:#fff;border:1px solid #e3ece9;border-radius:12px}.priority-row span{font-size:10px;font-weight:900}.priority-row em{font-style:normal;font-size:9px;color:#7c8c94}.demo-warning{margin-top:10px;background:#fff9ec;border:1px solid #f0dfb7;border-radius:14px;padding:10px;color:#846522;font-size:9px;line-height:1.7}
+.analytics-top{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.analytic-pill{background:#f7faf9;border:1px solid #e8efed;border-radius:15px;padding:13px}.analytic-pill b{font-size:20px;display:block}.analytic-pill span{font-size:9px;color:var(--muted)}.matrix{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:9px}.matrix-item{background:#fff;border:1px solid #e4ebed;border-radius:16px;padding:13px}.matrix-item h4{margin:0 0 3px;font-size:12px}.matrix-item p{margin:0;color:var(--muted);font-size:9px}.matrix-bar{height:7px;background:#eaf0ef;border-radius:99px;overflow:hidden;margin-top:9px}.matrix-bar i{height:100%;display:block;background:linear-gradient(90deg,#087e62,#4fd5b1);border-radius:99px}
+.track-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.track-step{background:#f7faf9;border:1px solid #e5ecea;border-radius:14px;padding:11px;position:relative}.track-step.current{background:#e9f8f3;border-color:#bde6d8}.track-step b{font-size:10px}.track-step span{display:block;color:var(--muted);font-size:9px;margin-top:4px}.track-step .dot{width:10px;height:10px;border-radius:50%;background:#a9b7bc;position:absolute;top:11px;left:11px}.track-step.current .dot{background:var(--green)}
+.why-card{display:grid;grid-template-columns:1fr 1fr;gap:10px}.why-item{padding:15px;background:#fff;border:1px solid var(--line);border-radius:17px}.why-item b{display:block;font-size:13px}.why-item span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+@media(max-width:700px){.need-hero-grid,.need-layout{grid-template-columns:1fr}.flow-line{grid-template-columns:repeat(4,1fr)}.province-grid{grid-template-columns:repeat(2,1fr)}.analytics-top{grid-template-columns:1fr 1fr}.matrix{grid-template-columns:1fr}.track-grid{grid-template-columns:1fr 1fr}.why-card{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.hero-device{display:none}}
+
+
+.data-panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:0 8px 28px rgba(7,28,46,.05)}
+.data-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:13px}.data-summary>div{background:linear-gradient(145deg,#f9fcfb,#eef7f4);border:1px solid #dfeee9;border-radius:17px;padding:14px}.data-summary span{display:block;color:#61737b;font-size:9px}.data-summary b{display:block;font-size:22px;margin-top:3px;color:#0a5361}.data-summary small{font-size:8px;color:#7d8b91}.data-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.data-grid.two{grid-template-columns:repeat(2,1fr)}.data-card{background:#fbfdfc;border:1px solid #e3ecea;border-radius:17px;padding:14px;min-height:120px}.data-card .data-icon{font-size:21px;margin-bottom:6px}.data-card h3{margin:0 0 4px;font-size:12px}.data-card b{font-size:22px;color:#0b6d58;display:block}.data-card span,.data-card p{font-size:9px;color:#71818a;margin:4px 0 0;display:block}.data-footnote{margin-top:12px;background:#f7faf9;border:1px dashed #cadfd8;border-radius:14px;padding:11px;font-size:9px;color:#61757d;line-height:1.8}.section-mini-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}.section-mini-head b{font-size:15px}.section-mini-head span{font-size:9px;color:var(--green2);font-weight:900}.data-list{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.data-list>div{background:#fbfdfc;border:1px solid #e3ecea;border-radius:14px;padding:12px}.data-list b{font-size:18px;color:#0a6e59}.data-list span{display:block;font-size:9px;color:#71818a;margin-top:4px}.callout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:10px}.cycle{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.cycle>div{background:linear-gradient(145deg,#072238,#0b4258);color:#fff;border-radius:18px;padding:15px;min-height:150px}.cycle b{width:30px;height:30px;border-radius:50%;background:#00a477;display:grid;place-items:center;font-size:13px}.cycle strong{display:block;margin-top:10px;font-size:12px}.cycle span{display:block;color:#c7dce4;font-size:9px;margin-top:5px}.data-tabs{margin-bottom:10px}
+
+
+/* ===== وضع ليلي + تحسينات تفاعلية ===== */
+body.dark{--bg:#07121b;--card:#0d1c27;--text:#e8f3f2;--muted:#9fb0b8;--line:#203440;--shadow:0 18px 50px rgba(0,0,0,.28);background:radial-gradient(circle at 15% 0%,rgba(0,164,119,.08),transparent 25%),linear-gradient(#06131e 0,#091925 320px,#07121b 100%)}
+body.dark .q,body.dark .metric-card,body.dark .chart-card,body.dark .play,body.dark .dictionary,body.dark .participation,body.dark .source,body.dark .budget-card,body.dark .data-card,body.dark .data-summary>div,body.dark .data-list>div,body.dark .term,body.dark .form-card,body.dark .province-search,body.dark .priority-box{background:#0d1c27;border-color:#203440;color:var(--text)}
+body.dark .ghost,body.dark .chip,body.dark .tab,body.dark .province-btn{background:#0d1c27;border-color:#29404d;color:#b7c9cf}
+body.dark .bottom{background:rgba(8,19,28,.94);border-color:#203440}
+body.dark .bottom a{color:#93a8b1}
+body.dark .bottom a.active{background:#123b35;color:#5de8bc}
+body.dark .brand-sub,body.dark .section-head p,body.dark .q p,body.dark .data-card span,body.dark .data-card p,body.dark .stat span,body.dark .data-footnote,body.dark .source p{color:#9fb0b8}
+body.dark .province-btn.active{background:linear-gradient(145deg,#0aa77e,#07556c);color:#fff;border-color:#0aa77e;box-shadow:0 12px 28px rgba(0,164,119,.22)}
+.theme-btn{width:42px;height:42px;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:14px;display:grid;place-items:center;box-shadow:0 7px 20px rgba(7,28,46,.06)}
+.theme-btn svg{width:20px;height:20px}
+.province-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:12px}
+.province-btn{border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 8px;font-size:10px;font-weight:900;color:#48606b;transition:.22s;min-height:42px}
+.province-btn:hover{transform:translateY(-2px);border-color:#9edccb;box-shadow:0 10px 24px rgba(0,164,119,.10)}
+.province-btn.active{background:linear-gradient(145deg,#e7faf3,#d8f2eb);color:#087358;border-color:#8ed6c4;box-shadow:0 9px 24px rgba(0,164,119,.12);transform:translateY(-2px)}
+.priority-box{background:linear-gradient(145deg,#fff,#f3faf8);border:1px solid #dcece7;border-radius:24px;padding:18px;margin-top:13px;box-shadow:0 16px 38px rgba(7,28,46,.08);position:relative;overflow:hidden}
+.priority-box:before{content:"";position:absolute;inset:auto auto -45px -45px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(0,164,119,.14),transparent 68%)}
+.province-hero-banner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 17px;border-radius:19px;background:linear-gradient(135deg,#072238,#0a5367);color:#fff;margin-bottom:12px;position:relative;overflow:hidden}
+.province-hero-banner:after{content:"";position:absolute;width:150px;height:150px;border:1px solid rgba(255,255,255,.12);border-radius:50%;left:-50px;bottom:-85px;box-shadow:0 0 0 35px rgba(255,255,255,.025)}
+.province-hero-banner .mini-kicker{font-size:9px;color:#9cefd6;font-weight:900}.province-hero-banner h3{margin:2px 0 0;font-size:22px}.province-hero-banner p{margin:2px 0 0;color:#c8dce4;font-size:9px}.province-hero-badge{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12);padding:9px 11px;border-radius:13px;font-size:9px;font-weight:900;white-space:nowrap}
+.status-line{display:flex;align-items:center;gap:6px;font-size:9px;color:#6b7b83;margin-top:10px}.status-dot{width:8px;height:8px;border-radius:50%;background:#efb64a;box-shadow:0 0 0 5px rgba(239,182,74,.12)}
+@media(max-width:900px){.province-grid{grid-template-columns:repeat(4,1fr)}}
+
+@media(max-width:600px){.data-summary{grid-template-columns:1fr 1fr}.data-grid,.data-grid.two,.data-list,.callout-grid,.cycle{grid-template-columns:1fr 1fr}body{background:#f4f7f8}.app{max-width:520px}.top{padding:10px 10px 0}.header{padding:15px 10px}.main{padding:0 10px}.hero{padding:24px 20px;border-radius:26px}.hero h1{font-size:37px}.hero p{font-size:13px}.brand-title{font-size:20px}.section{padding-top:34px}.section h2{font-size:24px}.quick{grid-template-columns:1fr 1fr}.q{padding:15px}.metrics{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.dictionary{grid-template-columns:1fr}.part-grid{grid-template-columns:1fr}.data-grid,.data-grid.two,.data-list,.callout-grid,.cycle{grid-template-columns:1fr}.data-summary{grid-template-columns:1fr 1fr}.alloc-row{grid-template-columns:88px 1fr auto}.notice span{font-size:10px}}
+
+/* ===== تحسينات الوضع الليلي + الخريطة + لوحة صانع القرار ===== */
+.app,.main,.section,body{transition:background-color .25s ease,color .25s ease}
+.province-detail-shell{background:linear-gradient(145deg,#f4fbf9,#edf6f4);border:1px solid #d5e8e2;border-radius:22px;padding:12px;margin-top:12px}
+.province-detail-shell .priority-box{background:transparent;border:0;padding:0;box-shadow:none}
+.province-detail-shell .priority-title{color:#153746}
+.province-detail-shell .priority-title .subhint{color:#52707d!important}
+.province-stat b{color:#075a78!important}
+.priority-row .row-num{color:#075f86!important;font-size:17px;font-weight:950;direction:ltr;unicode-bidi:embed}
+.priority-row .row-label{color:#183a4a!important}
+.priority-row .row-meta{color:#57727f!important}
+.map-shell{background:linear-gradient(145deg,#071d2f,#0c3449);border-radius:26px;padding:18px;box-shadow:0 18px 45px rgba(7,28,46,.16);overflow:hidden}
+.map-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;color:#fff}.map-top h3{margin:0;font-size:17px}.map-top p{margin:2px 0 0;font-size:9px;color:#a8c1cb}.map-wrap{position:relative;min-height:390px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch}.egypt-map{background:radial-gradient(circle at 55% 25%,rgba(0,164,119,.16),transparent 34%),rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:22px;display:grid;place-items:center;padding:10px}.egypt-map svg{width:min(100%,430px);height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.2))}.gov{fill:#173e50;stroke:#75b5b8;stroke-width:1.2;cursor:pointer;transition:.18s}.gov:hover{fill:#1d6671}.gov.active{fill:#09a37d;stroke:#c4ffec;stroke-width:2.4;filter:drop-shadow(0 5px 10px rgba(0,164,119,.32))}.gov-label{font-size:8px;fill:#d9ecef;pointer-events:none;font-weight:900}.map-side{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:15px;color:#fff}.map-selected{display:flex;align-items:center;justify-content:space-between;gap:8px}.map-selected b{font-size:23px}.map-selected span{font-size:9px;color:#a9c6cf}.map-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:13px 0}.map-kpi{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:11px}.map-kpi b{display:block;font-size:21px;color:#72f0c4}.map-kpi span{font-size:8px;color:#a9c1c8}.map-sector{padding:10px;border-radius:13px;background:rgba(255,255,255,.06);margin-top:7px}.map-sector b{font-size:10px}.map-sector span{font-size:8px;color:#a7c2ca;display:block;margin-top:2px}.map-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:8px;color:#a9c1c8;margin-top:10px}.map-legend i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-left:4px;background:#09a37d}.map-legend i.dim{background:#173e50;border:1px solid #75b5b8}
+.decision-shell{background:#081c2b;border-radius:26px;padding:18px;color:#fff;box-shadow:0 18px 45px rgba(7,28,46,.16)}.decision-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.decision-kpi{background:linear-gradient(145deg,#102f42,#0b2636);border:1px solid rgba(255,255,255,.08);border-radius:17px;padding:14px}.decision-kpi b{font-size:24px;color:#71e9c4;display:block}.decision-kpi span{font-size:8px;color:#aac4cd}.decision-tools{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.decision-tools select,.decision-tools input{background:#0e293a;border:1px solid #24485a;color:#dff4f0;border-radius:12px;padding:10px;font-size:9px;outline:none}.decision-table{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:9px}.decision-table th{color:#93afba;text-align:right;font-size:8px;padding:4px 8px}.decision-table td{background:#0e293a;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);padding:11px 8px;color:#d8e8ec}.decision-table td:first-child{border-radius:0 11px 11px 0}.decision-table td:last-child{border-radius:11px 0 0 11px}.decision-score{font-weight:950;color:#72f0c4;direction:ltr;unicode-bidi:embed}.status-pill{display:inline-flex;padding:4px 7px;border-radius:999px;font-size:8px;font-weight:900}.s-review{background:#fff0ce;color:#8b6a20}.s-verified{background:#dcf8ed;color:#116f57}.s-budget{background:#dfeaff;color:#27528f}.s-track{background:#ece2ff;color:#704ca6}
+body.dark .province-detail-shell{background:linear-gradient(145deg,#0d2733,#102733);border-color:#24424c}
+body.dark .province-detail-shell .priority-title{color:#e8f3f2} body.dark .province-detail-shell .priority-title .subhint{color:#9fb7c0!important}
+body.dark .province-detail-shell .need-stat{background:#0b202b;border-color:#23404a} body.dark .province-detail-shell .need-stat span{color:#91a8b0}
+body.dark .province-detail-shell .priority-row{background:#102733;border-color:#284651} body.dark .province-detail-shell .priority-row .row-label{color:#d9eaee!important} body.dark .province-detail-shell .priority-row .row-meta{color:#95adb6!important} body.dark .province-detail-shell .row-num{color:#66d9bf!important}
+body.dark .form-card,body.dark .province-card,body.dark .track-card,body.dark .source,body.dark .why-card,body.dark .need-note,body.dark .data-card,body.dark .data-list>div,body.dark .stat,body.dark .priority-list .priority-row,body.dark .slider-row,body.dark .data-footnote,body.dark .ask input,body.dark .need-stat{background:#0d1f2b!important;color:var(--text)!important;border-color:#263e49!important}
+body.dark .field label,body.dark .data-card span,body.dark .data-card p,body.dark .stat span,body.dark .section-head p,body.dark .q p,body.dark .province-meta,body.dark .need-note{color:#9fb4bc!important}
+body.dark .field select,body.dark .field input,body.dark .field textarea,body.dark .province-search input{background:#0a1923!important;color:#e8f3f2!important;border-color:#2b4652!important}
+body.dark .tag-demo{background:#132a35!important;border-color:#35515c!important;color:#a6d4c5!important}
+body.dark .tag-official{background:#123042!important;border-color:#2a5366!important;color:#9ed7ee!important}
+body.dark .chip,body.dark .ghost{background:#0d1f2b!important;color:#c7d7dd!important;border-color:#2b4652!important}
+body.dark .budget-card:after{background:#123a34!important}.budget-card:after{transition:background .2s ease}
+body.dark .data-summary>div{background:linear-gradient(145deg,#102834,#0c202c)!important;border-color:#294551!important}.data-summary b{color:#56c8c0!important}
+body.dark .need-hero{background:linear-gradient(145deg,#0b2331,#0e2c39)!important;border-color:#234450!important}.need-hero .flow-card{color:#fff}
+body.dark .callout{background:rgba(255,255,255,.055)!important;border-color:rgba(255,255,255,.09)!important}.callout span{color:#7d919a}body.dark .callout span{color:#a9bdc5}
+body.dark .track-step{background:#0f2a38!important;border-color:#274653!important}.track-step span{color:#71828b}.track-step b{color:inherit}body.dark .track-step span{color:#99b2bb}
+body.dark .metrics .chart-card,body.dark .metrics .metric-card,body.dark .play,body.dark .dictionary,body.dark .participation{background:#0d1f2b!important;border-color:#263e49!important}
+body.dark .result{background:#10362f!important;color:#dff6ef}.result b{color:#25c79d}
+body.dark .quick .q{background:#0d1f2b;border-color:#263e49;color:#e8f3f2}
+body.dark .mini-item{background:#0c202b!important;border-color:#29424b!important;color:#e6f2f1}.mini-item span{color:#9fb4bc!important}
+body.dark .screen{background:#0a1822!important}.mini-nav{color:#9fbfc5}.mini-total{box-shadow:0 10px 30px rgba(0,0,0,.18)}
+body.dark .section h2,body.dark h3,body.dark h4{color:#e8f3f2}
+@media(max-width:900px){.map-wrap{grid-template-columns:1fr}.decision-kpis{grid-template-columns:1fr 1fr}.decision-table{font-size:8px}}
+@media(max-width:650px){.decision-kpis{grid-template-columns:1fr 1fr}.decision-tools{display:grid;grid-template-columns:1fr}.decision-table{display:block;overflow:auto;white-space:nowrap}.map-side{padding:12px}.egypt-map{min-height:300px}.priority-row{grid-template-columns:1fr auto!important}}
+
+/* ===== الهوية الجديدة: شريط علوي ثابت + مساعد ذكي + وضع ليلي كامل ===== */
+.project-credit{margin:10px 18px 0;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:18px;padding:9px 12px;display:flex;align-items:center;gap:12px;box-shadow:0 7px 22px rgba(7,28,46,.04);font-size:10px}.credit-badge{background:#edf8f4;border:1px solid #d5ece4;color:#11755c;border-radius:999px;padding:5px 9px;font-size:9px;font-weight:950;white-space:nowrap}.credit-main{flex:1;display:grid;gap:1px}.credit-main b{font-size:12px;color:#17384a}.credit-main span{font-size:8.5px;color:#71818a}.credit-meta{display:flex;gap:6px;flex-wrap:wrap}.credit-meta span{background:#f5f9f9;border:1px solid #e5ecee;color:#5f747d;border-radius:999px;padding:5px 8px;font-size:8px;font-weight:850;white-space:nowrap}
+.topnav{position:sticky;top:10px;z-index:50;margin:12px 18px 0;padding:8px;display:flex;align-items:center;gap:4px;overflow:auto;background:rgba(255,255,255,.9);backdrop-filter:blur(18px);border:1px solid #dce6e8;border-radius:19px;box-shadow:0 15px 35px rgba(7,28,46,.10);scrollbar-width:none}.topnav::-webkit-scrollbar{display:none}.topnav-link{flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:12px;color:#63757e;font-size:10px;font-weight:950;transition:.2s}.topnav-link:hover{background:#f0f7f5;color:#087d62}.topnav-link.active{background:#072238;color:#fff;box-shadow:0 8px 20px rgba(7,28,46,.15)}.theme-chip{margin-right:auto;flex:0 0 auto;display:flex;align-items:center;gap:5px;border:1px solid var(--line);background:#fff;color:#526872;border-radius:12px;padding:8px 10px;font-size:9px;font-weight:950}.theme-chip svg{width:17px;height:17px}
+.chat-launcher{position:fixed;right:22px;bottom:20px;z-index:75;display:flex;align-items:center;gap:8px;background:linear-gradient(145deg,#0aa77e,#07556c);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:10px 12px;box-shadow:0 16px 36px rgba(7,28,46,.25);cursor:pointer;direction:rtl}.chat-mark{width:31px;height:31px;border-radius:11px;background:rgba(255,255,255,.14);display:grid;place-items:center;font-weight:950}.chat-launcher-text{font-size:10px;font-weight:950}.chat-pulse{position:absolute;top:-2px;left:7px;width:8px;height:8px;border-radius:50%;background:#6ff1c6;box-shadow:0 0 0 5px rgba(111,241,198,.12)}.chat-panel{position:fixed;right:22px;bottom:80px;z-index:76;width:min(400px,calc(100% - 28px));height:min(630px,calc(100vh - 100px));background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 80px rgba(7,28,46,.28);overflow:hidden;display:none;grid-template-rows:auto auto 1fr auto auto;direction:rtl}.chat-panel.open{display:grid;animation:chatIn .2s ease}.chat-head{background:linear-gradient(145deg,#072238,#0b5267);color:#fff;padding:16px;display:flex;justify-content:space-between;gap:10px}.chat-head b{display:block;font-size:15px}.chat-head span{display:block;color:#bcd2db;font-size:9px;margin-top:3px}.chat-head button{border:0;background:rgba(255,255,255,.08);color:#fff;border-radius:10px;width:32px;height:32px;font-size:20px}.chat-status{font-size:9px;color:var(--muted);padding:8px 12px;border-bottom:1px solid var(--line);background:var(--card)}.online-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#18b989;margin-left:5px}.chat-messages{padding:13px;overflow:auto;display:flex;flex-direction:column;gap:9px;background:linear-gradient(180deg,var(--card),#f7faf9)}.chat-msg{max-width:88%;padding:11px 12px;border-radius:15px;font-size:10px;line-height:1.75;box-shadow:0 4px 12px rgba(7,28,46,.05)}.chat-msg.bot{align-self:flex-start;background:#edf7f4;border:1px solid #d8ebe5;color:#234850;border-bottom-right-radius:5px}.chat-msg.user{align-self:flex-end;background:#072238;color:#fff;border-bottom-left-radius:5px}.chat-suggestions{padding:9px 10px;display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid var(--line);background:var(--card)}.chat-suggestions button{border:1px solid #dbe8e5;background:#f5faf8;color:#0b6f59;border-radius:999px;padding:7px 9px;font-size:8px;font-weight:900}.chat-input-row{display:grid;grid-template-columns:1fr 44px;gap:7px;padding:10px;border-top:1px solid var(--line);background:var(--card)}.chat-input-row textarea{resize:none;border:1px solid var(--line);background:#f7faf9;color:var(--text);border-radius:14px;padding:10px;font-size:10px;outline:none;max-height:96px}.chat-input-row button{border:0;border-radius:14px;background:var(--green);color:#fff;font-weight:950;font-size:18px}@keyframes chatIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+body.dark .project-credit{background:rgba(13,31,43,.94);border-color:#263e49}.dark .credit-badge{background:#12372f;border-color:#27584c;color:#9fe0ca}.dark .credit-main b{color:#e8f3f2}.dark .credit-main span,.dark .credit-meta{color:#9fb4bc}.dark .credit-meta span{background:#0b202b;border-color:#2a434f;color:#a9bdc5}.dark .topnav{background:rgba(8,19,28,.94);border-color:#203440}.dark .topnav-link{color:#9fb3bb}.dark .topnav-link:hover{background:#12352f;color:#70e5c2}.dark .topnav-link.active{background:#0aa77e;color:#fff}.dark .theme-chip{background:#0d1f2b;border-color:#2b4652;color:#c6d7dd}.dark .analytics-card,.dark .why-card,.dark .source,.dark .data-panel,.dark .data-card,.dark .data-list>div,.dark .data-summary>div,.dark .callout,.dark .term,.dark .stat,.dark .need-note{background:#0d1f2b!important;border-color:#263e49!important;color:#e8f3f2!important}.dark .why-item{background:#102733!important;border-color:#294551!important;color:#e8f3f2!important}.dark .why-item span,.dark .data-card span,.dark .data-card p,.dark .stat span,.dark .data-footnote,.dark .source p,.dark .section-head p{color:#9fb4bc!important}.dark .data-summary>div{background:linear-gradient(145deg,#102834,#0c202c)!important}.dark .matrix-item{background:#102733!important;border-color:#294551!important}.dark .matrix-item h4{color:#e8f3f2}.dark .matrix-item p{color:#9fb4bc}.dark .chat-messages{background:linear-gradient(180deg,#0d1f2b,#091923)}.dark .chat-status,.dark .chat-suggestions,.dark .chat-input-row{background:#0d1f2b;border-color:#263e49}.dark .chat-msg.bot{background:#10362f;border-color:#285649;color:#d8eeea}.dark .chat-suggestions button{background:#102d28;border-color:#285349;color:#a5dac8}.dark .chat-input-row textarea{background:#0a1923;border-color:#2b4652;color:#e8f3f2}.dark .field select,.dark .field input,.dark .field textarea,.dark .province-search input{background:#0a1923!important;color:#e8f3f2!important;border-color:#2b4652!important}.dark .priority-row{background:#102733!important;border-color:#284651!important}.dark .demo-warning{background:#132a35!important;border-color:#3a4e57!important;color:#b7d0d6!important}.dark .form-card,.dark .province-card,.dark .track-card{background:#0d1f2b!important;border-color:#263e49!important}.dark .tag-official{background:#123042!important;border-color:#2a5366!important;color:#9ed7ee!important}.dark .tag-demo{background:#132a35!important;border-color:#35515c!important;color:#a6d4c5!important}
+@media(max-width:700px){.project-credit{margin:8px 10px 0;display:grid;grid-template-columns:auto 1fr;gap:7px}.credit-meta{grid-column:1/-1}.topnav{margin:9px 10px 0;top:6px}.topnav-link{padding:9px 10px;font-size:9px}.theme-chip{margin-right:auto}.chat-launcher{right:14px;bottom:15px}.chat-launcher-text{display:none}.chat-panel{right:12px;bottom:70px;width:calc(100% - 24px);height:min(690px,calc(100vh - 88px))}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div class="notice"><span>نموذج طلابي تفاعلي مستند إلى «موازنة المواطن 2026/2027» — الأرقام الرسمية موضحة كمصدر، والواجهة ليست منصة حكومية رسمية.</span><button class="close" onclick="this.parentElement.remove()">×</button></div></div>
+  <div class="project-credit" aria-label="بيانات صاحب المشروع">
+    <div class="credit-badge">صاحب المشروع</div>
+    <div class="credit-main"><b>احمد ناجي صباح سعد</b><span>الادارة والاقتصاد والعلوم السياسية · جامعة اللوتس · الفرقة الثالثة</span></div>
+    <div class="credit-meta"><span>محافظة المنيا</span><span>01131367798</span></div>
+  </div>
+  <header class="header">
+    <a class="brand" href="#home" aria-label="موازنتي">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none">
+          <path d="M32 10v40" stroke="white" stroke-width="4" stroke-linecap="round"/><path d="M18 18h28" stroke="white" stroke-width="4" stroke-linecap="round"/><path d="M18 18 10 31" stroke="white" stroke-width="3"/><path d="M46 18 54 31" stroke="white" stroke-width="3"/>
+          <path d="M5.5 31h9l-4.5 7H1zM49.5 31h9L54 38h-9z" fill="#68e8c2"/><path d="M21 50h22" stroke="#68e8c2" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="12" r="5" fill="#efb64a"/>
+        </svg>
+      </div>
+      <div><div class="brand-title">موازنتي</div><span class="brand-sub">افهم الموازنة. شارك. اسأل.</span></div>
+    </a>
+    <div class="head-actions"><button class="ghost" onclick="showToast('هذه نسخة عرض طلابية للمسابقة ويمكن تطويرها وربطها ببيانات رسمية لاحقا.')">عن المشروع</button></div>
+  </header>
+
+  <nav class="topnav" aria-label="التنقل الرئيسي">
+    <a class="topnav-link active" href="#home" data-target="home">الرئيسية</a>
+    <a class="topnav-link" href="#need" data-target="need">احتياجي</a>
+    <a class="topnav-link" href="#provinces" data-target="provinces">المحافظات</a>
+    <a class="topnav-link" href="#overview" data-target="overview">الأرقام</a>
+    <a class="topnav-link" href="#analytics" data-target="analytics">البيانات</a>
+    <a class="topnav-link" href="#decision" data-target="decision">صانع القرار</a>
+    <a class="topnav-link" href="#participation" data-target="participation">المشاركة</a>
+    <button class="theme-chip" id="themeBtn" onclick="toggleTheme()" aria-label="تبديل الوضع الليلي" title="تبديل الوضع الليلي"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"/></svg><span>الوضع</span></button>
+  </nav>
+
+  <main class="main" id="home">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">موازنة المواطن 2026/2027 · تجربة تفاعلية</div>
+        <h1>الموازنة <em>تبدأ من الاحتياج.</em></h1>
+        <p>موازنتي تحول صوت المواطن من رأي متفرق إلى احتياج يمكن تنظيمه والتحقق منه، ثم ربطه بالأولوية والتكلفة والمتابعة — دون أن يطلب من المواطن تحديد ما يجب أن تنفقه الدولة.</p>
+        <div class="hero-actions"><button class="btn primary" onclick="go('need')">سجّل احتياجك</button><button class="btn secondary" onclick="go('provinces')">استكشف محافظتك</button></div>
+      </div>
+      <div class="hero-device">
+        <div class="phone"><div class="speaker"></div><div class="screen"><div class="mini-nav"><span>اليوم</span><span>2026/2027</span></div><div class="mini-title">أين تذهب الموازنة؟</div><div class="mini-total"><small>إجمالي المصروفات</small><b>5,187.975</b><div style="font-size:9px;opacity:.8">مليار جنيه</div></div><div class="mini-grid"><div class="mini-item"><strong>1,229.7</strong><span>التعليم · مليار</span><div class="bar"><i style="width:78%"></i></div></div><div class="mini-item"><strong>862.9</strong><span>الصحة · مليار</span><div class="bar"><i style="width:58%"></i></div></div><div class="mini-item"><strong>836.8</strong><span>الدعم والحماية · مليار</span><div class="bar"><i style="width:55%"></i></div></div><div class="mini-item"><strong>822.8</strong><span>الأجور · مليار</span><div class="bar"><i style="width:54%"></i></div></div></div></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="explore">
+      <div class="section-head"><div><div class="kicker">لوحة التحكم</div><h2>ابدأ من سؤالك</h2><p>أربع طرق لفهم الموازنة دون الغرق في الجداول.</p></div><span class="chip">تجربة موبايل</span></div>
+      <div class="quick">
+        <div class="q"><div class="qicon">📍</div><h3>سجّل احتياجك</h3><p>اختر محافظتك والقطاع وصف المشكلة في خطوات بسيطة.</p><button onclick="go('need')">أرسل احتياجك ←</button></div>
+        <div class="q"><div class="qicon">🗺️</div><h3>احتياجات المحافظات</h3><p>تصفح جميع محافظات مصر وشاهد كيف يمكن تنظيم الأولويات.</p><button onclick="go('provinces')">فتح المحافظات ←</button></div>
+        <div class="q"><div class="qicon">🔎</div><h3>مسار التحقق</h3><p>الجهة المختصة تتحقق من وجود المشكلة وتحدد الحل والتكلفة.</p><button onclick="go('workflow')">شاهد المسار ←</button></div>
+        <div class="q"><div class="qicon">📊</div><h3>لوحة الأولويات</h3><p>تحويل الآراء المجمعة إلى صورة منظمة تساعد على قراءة الاحتياجات.</p><button onclick="go('analytics')">استكشف البيانات ←</button></div>
+      </div>
+    </section>
+
+
+    <section class="section" id="need">
+      <div class="section-head"><div><div class="kicker">الفكرة الجديدة</div><h2>المواطن يبدأ من الاحتياج</h2><p>بدل أن تبدأ الموازنة من الرقم، تبدأ هنا من المشكلة التي يراها المواطن في محافظته.</p></div><span class="tag-official">منسجم مع المشاركة التشاركية</span></div>
+      <div class="need-hero">
+        <div class="need-hero-grid">
+          <div class="flow-card">
+            <div class="flow-title">حلقة الاحتياج</div>
+            <p>لا يحدد المواطن قيمة الإنفاق؛ بل يحدد المشكلة والأولوية، ثم تأتي مراحل التحقق والتقدير واتخاذ القرار من الجهات المختصة.</p>
+            <div class="flow-line">
+              <div class="flow-node">المواطن</div><div class="flow-arrow">←</div><div class="flow-node">الاحتياج</div><div class="flow-arrow">←</div><div class="flow-node">التحقق</div><div class="flow-arrow">←</div><div class="flow-node">التكلفة</div>
+            </div>
+            <div class="flow-line" style="margin-top:6px">
+              <div class="flow-node">المتابعة</div><div class="flow-arrow">←</div><div class="flow-node">الموازنة</div><div class="flow-arrow">←</div><div class="flow-node">الأولوية</div><div class="flow-arrow">←</div><div class="flow-node">القرار</div>
+            </div>
+          </div>
+          <div class="need-callouts">
+            <div class="callout"><b>1 · المواطن</b><span>يحدد المكان والمشكلة والقطاع ودرجة الاستعجال.</span></div>
+            <div class="callout"><b>2 · الجهة المختصة</b><span>تراجع التكرار والموقع وتتحقق من وجود المشكلة والحل المناسب.</span></div>
+            <div class="callout"><b>3 · وزارة المالية</b><span>ترى صورة مجمعة: المحافظة → القطاع → الاحتياج → الأولوية → التكلفة التقديرية.</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"><span class="tag-demo">بيانات الاحتياجات في هذا النموذج تجريبية</span><span class="tag-official">أرقام الموازنة الرسمية من الوثيقة</span></div>
+    </section>
+
+    <section class="section dark-section" id="provinces">
+      <div class="section-head"><div><div class="kicker">27 محافظة</div><h2>محافظتك في قلب الموازنة</h2><p>جميع محافظات مصر موجودة كهيكل جاهز لاستقبال البيانات الفعلية في النسخة التشغيلية.</p></div><span class="chip">اختيار المحافظة</span></div>
+      <div class="province-head"><div class="province-search" style="flex:1"><input id="provinceSearch" oninput="renderProvinces()" placeholder="ابحث عن محافظة…" aria-label="ابحث عن محافظة"></div><span class="tag-demo">ترتيب العرض لا يعني أولوية فعلية</span></div>
+      <div class="province-grid" id="provinceGrid"></div>
+      <div class="province-detail-shell" id="provinceDetail">
+        <div class="priority-box">
+          <div class="province-hero-banner"><div><div class="mini-kicker">ملف المحافظة في النموذج التفاعلي</div><h3 id="selectedProvince">القاهرة</h3><p id="provinceSubtitle">صوت المواطن يتحول إلى بيانات منظمة قابلة للمتابعة</p></div><div class="province-hero-badge" id="provinceBadge">محافظة مختارة</div></div>
+          <div class="priority-title"><div><b>صورة الاحتياج</b><div class="subhint">تتغير مباشرة عند اختيار المحافظة</div></div><span class="tag-demo">عرض تجريبي</span></div>
+          <div class="needs-stats"><div class="need-stat province-stat"><b id="reportCount">0</b><span>احتياجات مرصودة</span></div><div class="need-stat province-stat"><b id="priorityCount">0</b><span>أولوية مرتفعة</span></div><div class="need-stat province-stat"><b id="verifiedCount">0</b><span>قيد التحقق</span></div></div>
+          <div class="priority-list" id="priorityList"></div>
+          <div class="demo-warning">مهم: لا تمثل هذه الأرقام أولوية حقيقية للمحافظة. هي بيانات تجريبية لتوضيح كيف ستتحول المشاركات الفعلية لاحقا إلى لوحة منظمة لصانع القرار.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="map">
+      <div class="section-head"><div><div class="kicker">خريطة مصر التفاعلية</div><h2>كل محافظة لها قصة احتياج</h2><p>اختر محافظة من الخريطة، وشاهد كيف يمكن أن تتغير لوحة الاحتياج والقطاعات ذات الأولوية داخل نموذج موازنتي.</p></div><span class="chip">27 محافظة</span></div>
+      <div class="map-shell">
+        <div class="map-top"><div><h3>خريطة الاحتياجات</h3><p>اللون الأخضر = المحافظة المختارة · اللون الأزرق = محافظات أخرى</p></div><span class="province-hero-badge">بيانات عرض تجريبية</span></div>
+        <div class="map-wrap">
+          <div class="egypt-map">
+            <svg viewBox="0 0 420 600" role="img" aria-label="خريطة تفاعلية تجريبية لمحافظات مصر">
+              <path class="gov" data-gov="مطروح" d="M33 64 L146 37 L178 78 L138 115 L74 112 Z"/><text class="gov-label" x="88" y="80">مطروح</text>
+              <path class="gov" data-gov="الإسكندرية" d="M153 117 L207 108 L218 139 L181 154 L152 143 Z"/><text class="gov-label" x="171" y="134">الإسكندرية</text>
+              <path class="gov" data-gov="البحيرة" d="M117 115 L152 112 L181 154 L170 195 L132 177 L98 143 Z"/><text class="gov-label" x="126" y="150">البحيرة</text>
+              <path class="gov" data-gov="كفر الشيخ" d="M181 154 L218 139 L244 164 L215 187 L178 189 Z"/><text class="gov-label" x="190" y="174">كفر الشيخ</text>
+              <path class="gov" data-gov="الغربية" d="M178 189 L215 187 L221 225 L193 239 L171 220 Z"/><text class="gov-label" x="183" y="213">الغربية</text>
+              <path class="gov" data-gov="المنوفية" d="M141 184 L171 182 L171 220 L149 236 L129 211 Z"/><text class="gov-label" x="137" y="210">المنوفية</text>
+              <path class="gov" data-gov="الدقهلية" d="M220 187 L266 175 L290 209 L254 235 L221 225 Z"/><text class="gov-label" x="239" y="210">الدقهلية</text>
+              <path class="gov" data-gov="دمياط" d="M267 175 L307 174 L313 212 L288 214 Z"/><text class="gov-label" x="277" y="193">دمياط</text>
+              <path class="gov" data-gov="الشرقية" d="M221 225 L254 235 L284 260 L244 281 L207 250 Z"/><text class="gov-label" x="232" y="254">الشرقية</text>
+              <path class="gov" data-gov="القليوبية" d="M149 236 L193 239 L207 250 L191 274 L157 265 Z"/><text class="gov-label" x="158" y="253">القليوبية</text>
+              <path class="gov" data-gov="القاهرة" d="M191 274 L230 269 L242 292 L216 312 L186 299 Z"/><text class="gov-label" x="202" y="291">القاهرة</text>
+              <path class="gov" data-gov="الجيزة" d="M157 265 L191 274 L186 299 L216 312 L185 344 L145 320 L132 291 Z"/><text class="gov-label" x="157" y="298">الجيزة</text>
+              <path class="gov" data-gov="بورسعيد" d="M313 212 L347 218 L351 248 L322 248 L303 229 Z"/><text class="gov-label" x="316" y="233">بورسعيد</text>
+              <path class="gov" data-gov="الإسماعيلية" d="M284 260 L322 248 L340 274 L308 295 L274 282 Z"/><text class="gov-label" x="294" y="274">الإسماعيلية</text>
+              <path class="gov" data-gov="السويس" d="M340 274 L371 267 L386 301 L351 311 L329 290 Z"/><text class="gov-label" x="346" y="292">السويس</text>
+              <path class="gov" data-gov="الفيوم" d="M132 291 L157 301 L145 340 L116 348 L99 322 Z"/><text class="gov-label" x="119" y="323">الفيوم</text>
+              <path class="gov" data-gov="بني سويف" d="M145 340 L185 344 L190 382 L151 395 L126 365 Z"/><text class="gov-label" x="148" y="368">بني سويف</text>
+              <path class="gov" data-gov="المنيا" d="M151 395 L190 382 L212 421 L203 480 L164 484 L143 440 Z"/><text class="gov-label" x="166" y="437">المنيا</text>
+              <path class="gov" data-gov="الوادي الجديد" d="M74 343 L116 348 L126 365 L143 440 L164 484 L139 540 L93 530 L64 456 Z"/><text class="gov-label" x="85" y="431">الوادي الجديد</text>
+              <path class="gov" data-gov="أسيوط" d="M164 484 L203 480 L221 516 L200 550 L164 540 L139 540 Z"/><text class="gov-label" x="168" y="517">أسيوط</text>
+              <path class="gov" data-gov="سوهاج" d="M164 540 L200 550 L218 575 L193 590 L158 574 Z"/><text class="gov-label" x="174" y="568">سوهاج</text>
+              <path class="gov" data-gov="قنا" d="M200 550 L232 533 L251 560 L218 575 Z"/><text class="gov-label" x="219" y="554">قنا</text>
+              <path class="gov" data-gov="الأقصر" d="M232 533 L264 525 L282 549 L251 560 Z"/><text class="gov-label" x="247" y="543">الأقصر</text>
+              <path class="gov" data-gov="أسوان" d="M251 560 L282 549 L310 579 L277 597 L240 585 Z"/><text class="gov-label" x="269" y="578">أسوان</text>
+              <path class="gov" data-gov="البحر الأحمر" d="M371 267 L401 294 L401 426 L351 487 L322 448 L328 360 Z"/><text class="gov-label" x="354" y="385">البحر الأحمر</text>
+              <path class="gov" data-gov="شمال سيناء" d="M313 212 L347 218 L401 214 L405 267 L371 267 L340 274 L322 248 Z"/><text class="gov-label" x="350" y="240">شمال سيناء</text>
+              <path class="gov" data-gov="جنوب سيناء" d="M386 301 L405 267 L410 354 L381 391 L351 311 Z"/><text class="gov-label" x="381" y="340">جنوب سيناء</text>
+            </svg>
+          </div>
+          <div class="map-side">
+            <div class="map-selected"><div><span>المحافظة المختارة</span><b id="mapProvinceName">القاهرة</b></div><span id="mapProvinceHint">ملف احتياج حي</span></div>
+            <div class="map-kpis"><div class="map-kpi"><b id="mapReports">2</b><span>احتياجات مرصودة</span></div><div class="map-kpi"><b id="mapPriority">1</b><span>أولوية مرتفعة</span></div><div class="map-kpi"><b id="mapVerified">0</b><span>قيد التحقق</span></div><div class="map-kpi"><b id="mapScore">84</b><span>مؤشر اهتمام تجريبي</span></div></div>
+            <div id="mapSectors"></div>
+            <div class="map-legend"><span><i></i> مختارة</span><span><i class="dim"></i> محافظات أخرى</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="decision">
+      <div class="section-head"><div><div class="kicker">لوحة صانع القرار</div><h2>من آلاف الأصوات إلى صورة قابلة للعمل</h2><p>النموذج لا يقرر الإنفاق آليا؛ بل يرتب المعلومات التي تحتاجها الجهة المختصة قبل التحقق والتقدير وربطها بالموازنة.</p></div><span class="tag-official">نموذج محاكاة</span></div>
+      <div class="decision-shell">
+        <div class="decision-kpis"><div class="decision-kpi"><b id="dTotal">54</b><span>احتياجات في العينة التجريبية</span></div><div class="decision-kpi"><b id="dHigh">18</b><span>مرتفعة الأولوية</span></div><div class="decision-kpi"><b>27</b><span>محافظة قابلة للمتابعة</span></div><div class="decision-kpi"><b id="dSector">التعليم</b><span>أكثر قطاع في العينة</span></div></div>
+        <div class="decision-tools"><select id="dGovFilter" onchange="renderDecision()"><option value="all">كل المحافظات</option></select><select id="dSectorFilter" onchange="renderDecision()"><option value="all">كل القطاعات</option></select><input id="dSearch" oninput="renderDecision()" placeholder="ابحث عن مشكلة…"></div>
+        <div style="overflow:auto"><table class="decision-table"><thead><tr><th>المحافظة</th><th>القطاع</th><th>الاحتياج</th><th>التكرار</th><th>الأولوية</th><th>الحالة</th></tr></thead><tbody id="decisionRows"></tbody></table></div>
+        <div class="need-note" style="margin-top:12px;background:#10293a!important;border-color:#294a5b!important;color:#aac0c8!important">قاعدة العرض: «التكرار» و«الأولوية» هنا مؤشرات محاكاة. في النظام الفعلي تعتمد الدرجة على البيانات الموثقة ومعايير الأثر والاستعجال والعدالة المكانية، ثم تتولى الجهة المختصة التحقق والتقييم الفني.</div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="section-head"><div><div class="kicker">من الرأي إلى البيانات</div><h2>كيف تتحول المشاركة إلى مدخل للموازنة؟</h2><p>رحلة واضحة تفصل بين دور المواطن ودور الجهة المختصة ودور القرار المالي.</p></div><span class="chip">8 مراحل</span></div>
+      <div class="track-card"><div class="track-grid">
+        <div class="track-step current"><span class="dot"></span><b>المواطن</b><span>تسجيل الاحتياج</span></div>
+        <div class="track-step current"><span class="dot"></span><b>الاحتياج</b><span>تصنيف القطاع والمشكلة</span></div>
+        <div class="track-step"><span class="dot"></span><b>التحقق</b><span>مراجعة الجهة المختصة</span></div>
+        <div class="track-step"><span class="dot"></span><b>التكلفة</b><span>تقدير فني مختص</span></div>
+        <div class="track-step"><span class="dot"></span><b>الأولوية</b><span>تجميع التكرار والأثر والاستعجال</span></div>
+        <div class="track-step"><span class="dot"></span><b>الموازنة</b><span>ربط الأولويات بعملية التخطيط</span></div>
+        <div class="track-step"><span class="dot"></span><b>المتابعة</b><span>عرض حالة التنفيذ</span></div>
+        <div class="track-step"><span class="dot"></span><b>التعلم</b><span>قياس أثر المشاركة وتحسينها</span></div>
+      </div></div>
+    </section>
+
+    <section class="section" id="analytics">
+      <div class="section-head"><div><div class="kicker">لوحة القرار</div><h2>صورة موحدة لصانع القرار</h2><p>نموذج محاكاة لكيف يمكن تجميع المشاركات دون تحويل المواطن إلى جهة لتحديد التكلفة.</p></div><span class="tag-demo">بيانات تجريبية</span></div>
+      <div class="analytics-card">
+        <div class="analytics-top"><div class="analytic-pill"><b id="totalReports">0</b><span>إجمالي الاحتياجات المسجلة</span></div><div class="analytic-pill"><b>27</b><span>محافظة مدعومة</span></div><div class="analytic-pill"><b>12</b><span>قطاعا قابلا للتصنيف</span></div><div class="analytic-pill"><b id="topSector">—</b><span>الأكثر تكرارا في العرض</span></div></div>
+        <div class="matrix" id="sectorMatrix"></div>
+        <div class="need-note" style="margin-top:10px">التكلفة لا يدخلها المواطن. في النظام التشغيلي تكون التكلفة نتيجة للتحقق والتقييم الفني من الجهة المختصة، ثم تظهر لوزارة المالية ضمن الصورة المجمعة.</div>
+      </div>
+    </section>
+
+    <section class="section" id="voice">
+      <div class="section-head"><div><div class="kicker">المشاركة المجتمعية</div><h2>صوت المواطن لا يضيع</h2><p>يمكن أن تتحول المشاركات الموثقة إلى ترتيب أولويات محلية وجلسات حوار ونتائج متابعة.</p></div><span class="chip">مشاركة</span></div>
+      <div class="why-card">
+        <div class="why-item"><b>تصويت محلي على الاحتياجات الموثقة</b><span>بعد التحقق، يمكن للمواطنين إبداء الأولوية بين احتياجات متعددة في محافظتهم.</span></div>
+        <div class="why-item"><b>جلسات استماع رقمية</b><span>ربط نتائج المنصة بملخصات جلسات الحوار والمشاورات الجماهيرية.</span></div>
+        <div class="why-item"><b>لوحة متابعة عامة</b><span>هل انتقل الاحتياج من الرصد إلى التحقق ثم إلى التنفيذ؟</span></div>
+        <div class="why-item"><b>تقرير أثر سنوي</b><span>ما أكثر الاحتياجات التي سجلها المواطنون؟ وما الذي تم التحقق منه ومتابعته؟</span></div>
+      </div>
+    </section>
+
+    
+    <section class="section" id="datahub">
+      <div class="section-head"><div><div class="kicker">مرجع الموازنة</div><h2>الأرقام الرسمية في متناول يدك</h2><p>لوحة مرئية تجمع أهم البيانات التي أرسلتموها، وتعرض الوحدة بوضوح: مليون جنيه عندما يكون الرقم ماليا قابلا للتحويل، ومليار جنيه أو تريليون عند عرض الملخصات الكبرى.</p></div><span class="tag-official">موازنة 2026/2027</span></div>
+      <div class="tabs data-tabs" role="tablist">
+        <button class="tab active" onclick="showDataTab('sectors',this)">القطاعات</button>
+        <button class="tab" onclick="showDataTab('support',this)">الدعم والحماية</button>
+        <button class="tab" onclick="showDataTab('wages',this)">الأجور</button>
+        <button class="tab" onclick="showDataTab('revenue',this)">الإيرادات</button>
+        <button class="tab" onclick="showDataTab('invest',this)">الاستثمارات</button>
+        <button class="tab" onclick="showDataTab('green',this)">الاقتصاد الأخضر</button>
+        <button class="tab" onclick="showDataTab('debt',this)">الدين</button>
+        <button class="tab" onclick="showDataTab('cycle',this)">دورة الموازنة</button>
+      </div>
+      <div id="dataTab-sectors" class="data-panel">
+        <div class="data-summary"><div><span>إجمالي المصروفات</span><b>5,187.975</b><small>مليار جنيه</small></div><div><span>إجمالي الإيرادات</span><b>4.1</b><small>تريليون جنيه</small></div><div><span>الفائض الأولي المستهدف</span><b>1,217.181</b><small>مليار جنيه</small></div><div><span>الدين/الناتج</span><b>78.1%</b><small>مستهدف يونيو 2027</small></div></div>
+        <div class="data-grid">
+          <div class="data-card"><div class="data-icon">🏛️</div><h3>الخدمات العامة</h3><b>3,500</b><span>مليار جنيه · التصنيف الوظيفي</span></div>
+          <div class="data-card"><div class="data-icon">🛡️</div><h3>الحماية الاجتماعية</h3><b>688.3</b><span>مليار جنيه</span></div>
+          <div class="data-card"><div class="data-icon">🎓</div><h3>التعليم</h3><b>371.8</b><span>مليار جنيه · تصنيف وظيفي</span></div>
+          <div class="data-card"><div class="data-icon">🏥</div><h3>الصحة</h3><b>316.9</b><span>مليار جنيه · تصنيف وظيفي</span></div>
+          <div class="data-card"><div class="data-icon">📈</div><h3>الشؤون الاقتصادية</h3><b>192.1</b><span>مليار جنيه</span></div>
+          <div class="data-card"><div class="data-icon">🏠</div><h3>الإسكان والمرافق المجتمعية</h3><b>177.4</b><span>مليار جنيه</span></div>
+          <div class="data-card"><div class="data-icon">🛡️</div><h3>النظام العام والسلامة العامة</h3><b>172.1</b><span>مليار جنيه</span></div>
+          <div class="data-card"><div class="data-icon">🧩</div><h3>أنشطة وظيفية متنوعة</h3><b>147.5</b><span>مليار جنيه</span></div>
+          <div class="data-card"><div class="data-icon">🎭</div><h3>الشباب والثقافة والشؤون الدينية</h3><b>91.7</b><span>مليار جنيه</span></div>
+          <div class="data-card"><div class="data-icon">🌱</div><h3>حماية البيئة</h3><b>6.6</b><span>مليار جنيه</span></div>
+        </div>
+        <div class="data-footnote"><span class="tag-demo">ملاحظة منهجية</span> التصنيف الوظيفي ليس هو نفس جدول أبواب المصروفات؛ لذلك لا ينبغي جمع بنوده مع جدول المصروفات لإنتاج إجمالي جديد.</div>
+      </div>
+      <div id="dataTab-support" class="data-panel hidden">
+        <div class="section-mini-head"><b>الدعم والمنح والمزايا الاجتماعية</b><span>الإجمالي: 836.8 مليار جنيه</span></div>
+        <div class="data-list">
+          <div><b>178.3</b><span>دعم السلع التموينية · يستفيد منه أكثر من 60 مليون مواطن</span></div>
+          <div><b>104.2</b><span>دعم الكهرباء</span></div>
+          <div><b>69.1</b><span>شراء القمح المحلي من المزارعين</span></div>
+          <div><b>33.3</b><span>مخصصات الأدوية</span></div>
+          <div><b>19.2</b><span>مخصصات الأغذية ضمن شراء السلع والخدمات</span></div>
+          <div><b>15.9</b><span>المستلزمات الطبية</span></div>
+          <div><b>13</b><span>توفير مسكن ملائم لمحدودي ومتوسطي الدخل</span></div>
+          <div><b>5</b><span>مخصصات المياه ضمن باب الدعم</span></div>
+          <div><b>4.6</b><span>تطوير المناطق العشوائية عبر صندوق التنمية الحضرية</span></div>
+        </div>
+        <div class="callout-grid"><div class="callout"><b>تكافل وكرامة</b><span>55.2 مليار جنيه · 4.7 مليون أسرة مستفيدة.</span></div><div class="callout"><b>مزايا أخرى للأمان الاجتماعي</b><span>0.296 مليار جنيه، منها إعانات ومنح ودعم مشروعات الجمعيات والمؤسسات الأهلية.</span></div><div class="callout"><b>دعم الأدوية وألبان الأطفال</b><span>5 مليار جنيه في مشروع موازنة 2026/2027.</span></div></div>
+      </div>
+      <div id="dataTab-wages" class="data-panel hidden">
+        <div class="data-summary"><div><span>الأجور وتعويضات العاملين</span><b>822.8</b><small>مليار جنيه</small></div><div><span>معدل النمو</span><b>21.2%</b><small>عن موازنة العام السابق</small></div><div><span>الحد الأدنى للأجور</span><b>8,000</b><small>جنيه</small></div><div><span>الحافز الإضافي</span><b>750</b><small>جنيه شهريا</small></div></div>
+        <div class="data-grid two">
+          <div class="data-card"><h3>العلاوات الدورية</h3><p>12% للمخاطبين بقانون الخدمة المدنية، و15% لغير المخاطبين.</p></div>
+          <div class="data-card"><h3>القطاع الطبي</h3><b>8.5</b><span>مليار جنيه · زيادة 750 جنيها شهريا للأطقم الطبية وزيادة 25% في فئات نوبتجيات السهر والمبيت · 640 ألف مستفيد.</span></div>
+          <div class="data-card"><h3>قطاع التعليم</h3><b>14</b><span>مليار جنيه · حافز تدريس إضافي 1,000 جنيه وحافز تميز 2,000 جنيه للإدارة المدرسية المتميزة.</span></div>
+          <div class="data-card"><h3>التكلفة الإجمالية للحوافز والعلاوات</h3><b>77.5</b><span>مليار جنيه · 750 جنيها زيادة شهرية إضافية لجميع العاملين.</span></div>
+        </div>
+      </div>
+      <div id="dataTab-revenue" class="data-panel hidden">
+        <div class="data-summary"><div><span>الإيرادات العامة المستهدفة</span><b>4.1</b><small>تريليون جنيه</small></div><div><span>الضرائب الواردة بجدول الموازنة</span><b>3,029</b><small>مليار جنيه</small></div><div><span>منح</span><b>19.761</b><small>مليار جنيه</small></div><div><span>إيرادات أخرى</span><b>507.320</b><small>مليار جنيه</small></div></div>
+        <div class="data-list">
+          <div><b>1,347.20</b><span>الضريبة على الدخل · مليون جنيه</span></div><div><b>1,399.97</b><span>ضريبة القيمة المضافة · مليون جنيه</span></div><div><b>473.998</b><span>الضرائب على الممتلكات · مليون جنيه</span></div><div><b>105.693</b><span>الضرائب الجمركية · مليون جنيه</span></div><div><b>157.465</b><span>باقي الإيرادات الضريبية · مليون جنيه</span></div>
+        </div>
+        <div class="data-footnote"><span class="tag-official">مطابقة المصدر</span> أرقام الإيرادات والضرائب في هذه اللوحة هي آخر أرقام الإدخال التي اعتمدها فريق المشروع في هذا الإصدار، ويمكن ربطها لاحقا بجدول المصدر الرسمي وسجل التحديث.</div>
+      </div>
+      <div id="dataTab-invest" class="data-panel hidden">
+        <div class="data-summary"><div><span>إجمالي الاستثمارات الكلية</span><b>3,760</b><small>مليار جنيه · بدون التغير في المخزون</small></div><div><span>استثمارات خاصة</span><b>2,200</b><small>مليار · 58.5%</small></div><div><span>استثمارات عامة</span><b>1,560</b><small>مليار · 41.5%</small></div><div><span>استثمارات حكومية</span><b>553.7</b><small>مليار جنيه</small></div></div>
+        <div class="data-grid two"><div class="data-card"><h3>الهيئات الاقتصادية العامة</h3><b>743.4</b><span>مليار جنيه · النقل والتخزين 45.4% · الكهرباء والطاقة 26.8% · التعليم والصحة والخدمات الاجتماعية 16.7%.</span></div><div class="data-card"><h3>قطاع الأعمال العام</h3><b>262.9</b><span>مليار جنيه.</span></div><div class="data-card"><h3>الجهاز الإداري للدولة</h3><b>283.6</b><span>مليار جنيه · ضمن الاستثمارات الحكومية.</span></div><div class="data-card"><h3>الإدارة المحلية</h3><b>37.4</b><span>مليار جنيه.</span></div></div>
+        <div class="data-footnote"><span class="tag-official">مصدر</span> بيانات الخطة الاستثمارية وفقا لوزارة التخطيط والتنمية الاقتصادية كما وردت في موازنة المواطن.</div>
+      </div>
+      <div id="dataTab-green" class="data-panel hidden">
+        <div class="data-summary"><div><span>الاستثمارات العامة الخضراء</span><b>60%</b><small>مستهدف 2026/2027 حسب البيانات المرسلة</small></div><div><span>الطاقة المتجددة</span><b>42%</b><small>مستهدف من إجمالي استخدامات الطاقة بحلول 2030</small></div><div><span>الكريمات</span><b>140</b><small>ميجاوات · محطة شمسية حرارية</small></div><div><span>الغردقة</span><b>20</b><small>ميجاوات · خلايا فوتوفولتية بالتعاون مع JICA</small></div></div>
+        <div class="why-card"><div class="why-item"><b>مشروعات الطاقة المتجددة</b><span>المحطة الشمسية الحرارية بالكريمات، ومحطة الغردقة الفوتوفولتية، وتمهيد أراضي مشروعات الطاقة المتجددة برأس شقير وجنوب الغردقة وشرق وغرب النيل.</span></div><div class="why-item"><b>فكرة التطبيق</b><span>عند تسجيل احتياج محلي متعلق بالطاقة، يمكن مستقبلا ربطه ببيانات المشروعات الخضراء وحالة التنفيذ، لا بمجرد رقم مالي.</span></div></div>
+      </div>
+      <div id="dataTab-debt" class="data-panel hidden">
+        <div class="data-summary"><div><span>الدين إلى الناتج · يونيو 2025</span><b>82.5%</b><small>مقابل نحو 96% في يونيو 2023</small></div><div><span>الدين إلى الناتج · ديسمبر 2025</span><b>78%</b><small>تحسن خلال عامين</small></div><div><span>الدين الخارجي لأجهزة الموازنة</span><b>78.5</b><small>مليار دولار · يونيو 2025</small></div><div><span>الدين المستهدف</span><b>78.1%</b><small>من الناتج المحلي · يونيو 2027</small></div></div>
+        <div class="data-footnote"><span class="tag-official">بيانات رسمية</span> يعتمد التطبيق على عرض مؤشر الدين بجانب مفهوم الاستدامة المالية، مع الاحتفاظ بالسياق الزمني لكل نسبة.</div>
+      </div>
+      <div id="dataTab-cycle" class="data-panel hidden">
+        <div class="cycle"><div><b>1</b><strong>الإعداد والصياغة</strong><span>أكتوبر → مارس<br>منشور إعداد الموازنة وتجميع مشروعات الجهات ومناقشتها.</span></div><div><b>2</b><strong>التشريع والاعتماد</strong><span>إبريل → نهاية يونيو<br>مناقشة مجلس النواب والإقرار وصدور قانون ربط الموازنة.</span></div><div><b>3</b><strong>التنفيذ</strong><span>أثناء السنة المالية<br>التقارير الشهرية والنصف سنوية ومتابعة الأداء.</span></div><div><b>4</b><strong>الرقابة</strong><span>خلال 4 أشهر من نهاية السنة المالية<br>الحساب الختامي والتدقيق والمناقشة البرلمانية.</span></div></div>
+        <div class="data-footnote"><span class="tag-demo">طبقة تعليمية</span> يمكن ربط كل مرحلة داخل النسخة التشغيلية باحتياجات المواطنين التي وصلت إليها، ليرى المستخدم كيف تتحرك المشاركة داخل دورة الموازنة.</div>
+      </div>
+    </section>
+
+    <section class="section" id="submitNeed">
+      <div class="section-head"><div><div class="kicker">تجربة الإبلاغ</div><h2>سجّل احتياج محافظتك</h2><p>نموذج قصير لا يطلب منك تحديد التكلفة أو قرار الصرف.</p></div><span class="chip">تجريبي</span></div>
+      <div class="need-layout">
+        <form class="form-card" id="needForm" onsubmit="submitNeed(event)">
+          <div class="field"><label for="needProvince">المحافظة</label><select id="needProvince" required></select></div>
+          <div class="field"><label for="needSector">القطاع</label><select id="needSector" required><option value="">اختر القطاع</option><option>التعليم</option><option>الصحة</option><option>الطرق والنقل</option><option>مياه الشرب</option><option>الصرف الصحي</option><option>الزراعة والري</option><option>الإسكان</option><option>الطاقة</option><option>النظافة والبيئة</option><option>التشغيل وتمكين الشباب</option><option>الحماية الاجتماعية</option><option>الاتصالات والتحول الرقمي</option></select></div>
+          <div class="field"><label for="needProblem">ما المشكلة؟</label><input id="needProblem" required maxlength="120" placeholder="مثال: ضعف خدمة المياه في منطقة سكنية"></div>
+          <div class="field"><label for="needUrgency">درجة الأولوية من وجهة نظرك</label><select id="needUrgency" required><option value="1">منخفضة</option><option value="2">متوسطة</option><option value="3">مرتفعة</option><option value="4">عاجلة</option></select></div>
+          <div class="field"><label for="needDetails">وصف مختصر</label><textarea id="needDetails" maxlength="400" placeholder="أين المشكلة؟ ومن أكثر من يتأثر بها؟ وما الذي تراه أولوية؟"></textarea></div>
+          <div class="form-actions"><button class="small-btn primary full-btn" type="submit">إرسال الاحتياج إلى النموذج التفاعلي</button><button class="small-btn secondary-lite full-btn" type="button" onclick="resetNeedForm()">مسح النموذج</button></div>
+          <div class="need-note" style="margin-top:10px">في النسخة الحكومية الفعلية يمكن ربط هذا النموذج بآليات التحقق، معايير منع التكرار، وربط النتائج بجلسات الاستماع والمتابعة.</div>
+        </form>
+        <div class="form-card">
+          <h3 style="margin-top:0">ماذا يحدث بعد الإرسال؟</h3>
+          <div class="track-grid" style="grid-template-columns:1fr 1fr">
+            <div class="track-step current"><span class="dot"></span><b>رصد</b><span>تسجيل الاحتياج</span></div>
+            <div class="track-step"><span class="dot"></span><b>تحقق</b><span>الجهة المختصة</span></div>
+            <div class="track-step"><span class="dot"></span><b>تقدير</b><span>الحل والتكلفة</span></div>
+            <div class="track-step"><span class="dot"></span><b>متابعة</b><span>حالة التنفيذ</span></div>
+          </div>
+          <div class="priority-box" style="margin-top:12px">
+            <b style="font-size:12px">مبدأ أساسي</b>
+            <p style="font-size:10px;color:#64777f;margin:6px 0 0">المواطن يصف الاحتياج. لا يحدد حجم الاعتماد المالي. هذا الفصل يحافظ على قيمة المشاركة دون خلط أدوار المواطن بالاختصاص الفني والمالي.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-head"><div><div class="kicker">أهم لقطة</div><h2>صورة الموازنة في 20 ثانية</h2><p>أرقام مأخوذة مباشرة من موازنة المواطن 2026/2027.</p></div><span class="chip">مليون جنيه</span></div>
+      <div class="metrics">
+        <div class="metric-card"><div class="metric-main"><small>إجمالي المصروفات</small><b>5,187,975</b><div class="desc">مليون جنيه · موازنة 2026/2027</div></div><div class="metric-grid"><div class="stat"><b>4,056,375</b><span>إجمالي الإيرادات · مليون جنيه</span></div><div class="stat"><b>1,217,181</b><span>الميزان الأولي · مليون جنيه</span><em>5.0% من الناتج المحلي</em></div></div></div>
+        <div class="chart-card"><h3 style="margin-top:0">أين يتركز الإنفاق؟</h3><div class="alloc"><div class="alloc-row"><span class="alloc-label">الفوائد</span><div class="alloc-track"><i style="width:93%"></i></div><b class="alloc-val">2,419,823</b></div><div class="alloc-row"><span class="alloc-label">الدعم والحماية</span><div class="alloc-track"><i style="width:34%"></i></div><b class="alloc-val">836,826</b></div><div class="alloc-row"><span class="alloc-label">الأجور</span><div class="alloc-track"><i style="width:34%"></i></div><b class="alloc-val">822,781</b></div><div class="alloc-row"><span class="alloc-label">الاستثمارات</span><div class="alloc-track"><i style="width:23%"></i></div><b class="alloc-val">553,693</b></div></div><div class="legend"><span>الأرقام بالمليون جنيه</span><span>المقياس بصري للمقارنة</span></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="allocations">
+      <div class="section-head"><div><div class="kicker">الخريطة المالية</div><h2>الموازنة من الداخل</h2><p>بدلا من جدول طويل، كل بند أصبح بطاقة قابلة للفهم والمقارنة.</p></div><span class="chip">2026/2027</span></div>
+      <div class="tabs"><button class="tab active" onclick="filterBudget('all',this)">كل البنود</button><button class="tab" onclick="filterBudget('expense',this)">المصروفات</button><button class="tab" onclick="filterBudget('income',this)">الإيرادات</button><button class="tab" onclick="filterBudget('social',this)">اجتماعي</button></div>
+      <div class="grid3" id="budgetGrid">
+        <div class="budget-card" data-cat="expense"><h3>الأجور وتعويضات العاملين</h3><p>تمويل الأجور والمكافآت والحوافز بأجهزة الموازنة العامة.</p><div class="budget-number">822,781 <span class="budget-unit">مليون</span></div><span class="delta">+21.2% عن العام السابق</span></div>
+        <div class="budget-card" data-cat="expense"><h3>شراء السلع والخدمات</h3><p>احتياجات الجهات الحكومية من السلع والخدمات.</p><div class="budget-number">293,719 <span class="budget-unit">مليون</span></div></div>
+        <div class="budget-card" data-cat="expense"><h3>الفوائد</h3><p>فوائد مرتبطة بتمويل الموازنة والدين.</p><div class="budget-number">2,419,823 <span class="budget-unit">مليون</span></div></div>
+        <div class="budget-card" data-cat="social"><h3>الدعم والمنح والمزايا الاجتماعية</h3><p>جزء رئيسي من برامج الحماية الاجتماعية والدعم.</p><div class="budget-number">836,826 <span class="budget-unit">مليون</span></div><span class="delta">+11.4% سنويا للسلع التموينية ضمن أبرز المخصصات</span></div>
+        <div class="budget-card" data-cat="expense"><h3>شراء أصول غير مالية</h3><p>الاستثمارات وفق التصنيف الوارد في جدول الموازنة.</p><div class="budget-number">553,693 <span class="budget-unit">مليون</span></div></div>
+        <div class="budget-card" data-cat="income"><h3>إجمالي الإيرادات</h3><p>الإيرادات المقدرة بالموازنة.</p><div class="budget-number">4,056,375 <span class="budget-unit">مليون</span></div></div>
+        <div class="budget-card" data-cat="income"><h3>الإيرادات الضريبية</h3><p>الحصيلة الضريبية المستهدفة.</p><div class="budget-number">3,529,294 <span class="budget-unit">مليون</span></div></div>
+        <div class="budget-card" data-cat="expense"><h3>العجز الكلي</h3><p>الميزان الكلي كما ورد في جدول ملامح الموازنة.</p><div class="budget-number">1,202,641- <span class="budget-unit">مليون</span></div><span class="delta">4.9% من الناتج المحلي</span></div>
+        <div class="budget-card" data-cat="income"><h3>الميزان الأولي</h3><p>فائض أولي مستهدف لدعم خفض نسبة الدين.</p><div class="budget-number">1,217,181 <span class="budget-unit">مليون</span></div><span class="delta">5.0% من الناتج المحلي</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="sectors">
+      <div class="section-head"><div><div class="kicker">الإنسان أولا</div><h2>التعليم والصحة والحماية</h2><p>أرقام وبرامج بارزة من الوثيقة مع الحفاظ على وحدة القياس الأصلية.</p></div><span class="chip">مليون جنيه</span></div>
+      <div class="grid3">
+        <div class="budget-card"><h3>الصحة</h3><p>مخصصات قطاع الصحة في موازنة 2026/2027.</p><div class="budget-number">862,900 <span class="budget-unit">مليون جنيه</span></div><span class="delta">زيادة 39.6%</span><p style="margin-top:10px">دعم التأمين الصحي الشامل لغير القادرين: 15,700 مليون جنيه.</p></div>
+        <div class="budget-card"><h3>التعليم</h3><p>مخصصات قطاع التعليم في موازنة 2026/2027.</p><div class="budget-number">1,229,700 <span class="budget-unit">مليون جنيه</span></div><span class="delta">زيادة 17.9%</span><p style="margin-top:10px">طباعة الكتب المدرسية: 7,800 مليون · التغذية المدرسية: 7,000 مليون.</p></div>
+        <div class="budget-card"><h3>البحث العلمي</h3><p>الاستحقاق الدستوري كما ورد في الوثيقة.</p><div class="budget-number">205,200 <span class="budget-unit">مليون جنيه</span></div><span class="delta">1% من الناتج المحلي</span><p style="margin-top:10px">هذه الأرقام تشمل النطاق المحدد في الوثيقة وفقا لآلية الاحتساب الموضحة بها.</p></div>
+        <div class="budget-card"><h3>تكافل وكرامة</h3><p>برنامج الأمان الاجتماعي.</p><div class="budget-number">55,200 <span class="budget-unit">مليون جنيه</span></div><span class="delta">4.7 مليون أسرة مستفيدة</span></div>
+        <div class="budget-card"><h3>دعم الأدوية وألبان الأطفال</h3><p>فرق التكلفة لعدد من المستلزمات الدوائية وألبان الأطفال.</p><div class="budget-number">5,000 <span class="budget-unit">مليون جنيه</span></div></div>
+        <div class="budget-card"><h3>تنمية الصعيد</h3><p>دعم برنامج تنمية الصعيد في مشروع الموازنة.</p><div class="budget-number">450 <span class="budget-unit">مليون جنيه</span></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="game">
+      <div class="section-head"><div><div class="kicker">تعلّم بالتجربة</div><h2>كن وزير المالية لدقيقتين</h2><p>اللعبة لا تعطي "إجابة صحيحة"؛ بل توضح المفاضلات بين الأولويات.</p></div><span class="chip">محاكاة تعليمية</span></div>
+      <div class="play"><div class="game"><div class="balance"><small>رصيد افتراضي للتجربة</small><b id="balance">1,000</b><div class="money-row"><span>مليون جنيه</span><span id="used">0%</span></div><div class="bar" style="background:rgba(255,255,255,.15);margin-top:10px"><i id="usedbar" style="width:0%;background:#6fe5c1"></i></div></div><div><div class="slider-row"><label>التعليم <span id="v1">250</span></label><input id="s1" type="range" min="50" max="500" value="250" oninput="calcGame()"></div><div class="slider-row"><label>الصحة <span id="v2">220</span></label><input id="s2" type="range" min="50" max="500" value="220" oninput="calcGame()"></div><div class="slider-row"><label>الحماية الاجتماعية <span id="v3">220</span></label><input id="s3" type="range" min="50" max="500" value="220" oninput="calcGame()"></div><div class="slider-row"><label>الاستثمار <span id="v4">180</span></label><input id="s4" type="range" min="50" max="500" value="180" oninput="calcGame()"></div><div class="result" id="gameResult">أنت داخل السقف الافتراضي حاليا. <b>جرب تحريك المؤشرات</b> وشاهد أثر القرار.</div></div></div></div>
+    </section>
+
+    <section class="section" id="participation">
+      <div class="section-head"><div><div class="kicker">الشفافية والمشاركة</div><h2>من القراءة إلى المشاركة</h2><p>وحدة الشفافية والمشاركة المجتمعية تركز على توسيع المشاركة وتحسين الرقابة وإتاحة البيانات.</p></div><span class="chip">OBS 2025</span></div>
+      <div class="participation"><div class="part-grid"><div class="part-item"><b>59/100</b><span>الشفافية</span></div><div class="part-item"><b>35/100</b><span>مشاركة الجمهور</span></div><div class="part-item"><b>59/100</b><span>رقابة الموازنة</span></div></div><div class="part-note">في الوثيقة تظهر أيضا خطة للوصول إلى معيار دولي لا يقل عن 61/100 في الشفافية، وتطوير التقارير لتشمل الإطار متوسط المدى وبيانات الحكومة العامة وأسقف الدين والبرامج والأداء، مع توسيع جلسات الاستماع لجميع الفئات.</div></div>
+      <div class="source"><h3>كيف نجعل النسخة النهائية أقرب لمتطلبات الشفافية؟</h3><p>كل رقم قابل للنقر لعرض: السنة المالية، وحدة القياس، الصفحة/الجدول المصدر، هل الرقم تقديري أم فعلي، وكيف تغير عن العام السابق. وتوجد مساحة "صوت المواطن" لاقتراح الأولويات وتسجيل نتائج جلسات الحوار والمتابعة.</p><span class="tag">مصمم وفق ما ورد في موازنة المواطن 2026/2027</span></div>
+    </section>
+  </main>
+
+  <div class="footer">موازنتي — نموذج طلابي لتجربة رقمية تحول احتياج المواطن إلى بيانات منظمة قابلة للتحقق والمتابعة، وتبسط فهم الموازنة العامة. البيانات الظاهرة مستندة إلى «موازنة المواطن عن الموازنة المعتمدة للعام المالي 2027/2026»، الإصدار الثالث عشر، أغسطس 2026. © 2026</div>
+</div>
+<div class="chat-launcher" id="chatLauncher" onclick="toggleChat()" role="button" tabindex="0" aria-label="افتح مساعد موازنتي"><span class="chat-pulse"></span><span class="chat-mark">م</span><span class="chat-launcher-text">اسأل موازنتي</span></div>
+<aside class="chat-panel" id="chatPanel" aria-label="مساعد موازنتي">
+  <div class="chat-head"><div><b>مساعد موازنتي</b><span>مساعد ذكي يقرأ بيانات الموقع والمشاركات الجديدة</span></div><button onclick="toggleChat()" aria-label="إغلاق">×</button></div>
+  <div class="chat-status"><span class="online-dot"></span> متصل ببيانات الموقع المحلية</div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-suggestions"><button onclick="quickChat('كم تبلغ مخصصات التعليم؟')">مخصصات التعليم</button><button onclick="quickChat('كيف اسجل احتياجا؟')">كيف اسجل احتياجا؟</button><button onclick="quickChat('ما احتياجات المنيا؟')">احتياجات المنيا</button><button onclick="quickChat('ما مراحل الموازنة؟')">مراحل الموازنة</button></div>
+  <div class="chat-input-row"><textarea id="chatInput" rows="1" placeholder="اكتب سؤالك هنا…" onkeydown="chatKey(event)"></textarea><button onclick="sendChat()" aria-label="إرسال">➤</button></div>
+</aside>
+
+<div class="toast" id="toast"></div>
+<script>
+const provinces=['القاهرة','الجيزة','القليوبية','الإسكندرية','البحيرة','مطروح','الغربية','المنوفية','الدقهلية','دمياط','كفر الشيخ','الشرقية','بورسعيد','الإسماعيلية','السويس','شمال سيناء','جنوب سيناء','الفيوم','بني سويف','المنيا','أسيوط','سوهاج','قنا','الأقصر','أسوان','الوادي الجديد','البحر الأحمر'];
+const sectors=['التعليم','الصحة','الطرق والنقل','مياه الشرب','الصرف الصحي','الزراعة والري','الإسكان','الطاقة','النظافة والبيئة','التشغيل وتمكين الشباب','الحماية الاجتماعية','الاتصالات والتحول الرقمي'];
+const demoByProvince={
+'القاهرة':[['الطرق والنقل',3],['الصرف الصحي',2]],'الجيزة':[['مياه الشرب',3]],'القليوبية':[['الصرف الصحي',2]],'الإسكندرية':[['الطرق والنقل',3],['الصرف الصحي',2]],'البحيرة':[['مياه الشرب',2]],'مطروح':[['مياه الشرب',3]],'الغربية':[['الطرق والنقل',2]],'المنوفية':[['الصرف الصحي',2]],'الدقهلية':[['مياه الشرب',2]],'دمياط':[['الطرق والنقل',2]],'كفر الشيخ':[['الزراعة والري',3]],'الشرقية':[['التعليم',2]],'بورسعيد':[['الطرق والنقل',2]],'الإسماعيلية':[['مياه الشرب',2]],'السويس':[['الصرف الصحي',2]],'شمال سيناء':[['الطرق والنقل',3]],'جنوب سيناء':[['السياحة والخدمات',2]],'الفيوم':[['الزراعة والري',3]],'بني سويف':[['التعليم',2]],'المنيا':[['الصحة',3],['التعليم',2]],'أسيوط':[['الصحة',3],['الطرق والنقل',2]],'سوهاج':[['التعليم',3],['الصحة',2]],'قنا':[['الزراعة والري',2]],'الأقصر':[['الطرق والنقل',2]],'أسوان':[['مياه الشرب',2]],'الوادي الجديد':[['الزراعة والري',3]],'البحر الأحمر':[['مياه الشرب',2]]
+};
+function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+function filterBudget(cat,btn){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('#budgetGrid .budget-card').forEach(c=>c.classList.toggle('hidden',cat!=='all'&&c.dataset.cat!==cat))}
+function calcGame(){const vals=[s1.value*1,s2.value*1,s3.value*1,s4.value*1];[v1,v2,v3,v4].forEach((el,i)=>el.textContent=vals[i].toLocaleString('en-US'));const total=vals.reduce((a,b)=>a+b,0);const pct=Math.min(total/1000*100,100);balance.textContent=Math.max(0,1000-total).toLocaleString('en-US');used.textContent=Math.round(pct)+'%';usedbar.style.width=Math.min(pct,100)+'%';const over=total-1000;gameResult.innerHTML=over>0?`الاختيارات الحالية تتجاوز الرصيد الافتراضي بـ <b>${over.toLocaleString('en-US')} مليون جنيه</b>. هذه هي المفاضلة التي يجب أن تراها قبل اتخاذ القرار.`:`ما زال لديك <b>${(1000-total).toLocaleString('en-US')} مليون جنيه</b> من الرصيد الافتراضي. جرّب زيادة أولوية واحدة ثم راقب المساحة المتبقية.`}
+function askTerm(){const q=document.getElementById('askInput').value.trim();const box=document.getElementById('askAnswer');if(!q){showToast('اكتب مصطلحا أولا');return}let a='يمكننا شرح هذا المصطلح من خلال معنى سريع، مثال من الحياة اليومية، ثم التعريف والمصدر الرسمي.';if(/عجز/.test(q))a='العجز ببساطة: عندما تكون الموارد أقل من الاحتياجات التمويلية في الموازنة. في جدول الموازنة المعروض هنا، الميزان الكلي سالب بنحو 1,202,641 مليون جنيه.';else if(/فائض|اولى|أولي/.test(q))a='الفائض الأولي هو المعيار الذي يستبعد فوائد الدين من المقارنة الأساسية بين الإيرادات والمصروفات الأولية؛ الموازنة تستهدف فائضا أوليا قدره 1,217,181 مليون جنيه.';else if(/موازنة/.test(q))a='الموازنة العامة هي خطة الدولة للإيرادات المتوقعة وترتيب أولويات الإنفاق خلال العام المالي، وهي أيضا أداة للرقابة والمساءلة والمشاركة.';else if(/حكومة عامة/.test(q))a='منظور الحكومة العامة يوسع القراءة لتشمل بيانات أوسع للجهات والهيئات الاقتصادية، بما يدعم الشمول والشفافية في عرض إيرادات ومصروفات الدولة.';box.innerHTML=`<h3>الإجابة</h3><p>${a}</p>`;box.classList.remove('hidden')}
+
+function getUserReports(){try{return JSON.parse(localStorage.getItem('mizanReports')||'[]')}catch(e){return[]}}
+function saveUserReport(report){const arr=getUserReports();arr.push(report);localStorage.setItem('mizanReports',JSON.stringify(arr))}
+function renderProvinceSelect(){const sel=document.getElementById('needProvince');sel.innerHTML='<option value="">اختر المحافظة</option>'+provinces.map(p=>`<option>${p}</option>`).join('')}
+function renderProvinces(){const q=(document.getElementById('provinceSearch')?.value||'').trim();const grid=document.getElementById('provinceGrid');const filtered=provinces.filter(p=>p.includes(q));grid.innerHTML=filtered.map(p=>`<button class="province-btn ${p===document.getElementById('selectedProvince').textContent?'active':''}" onclick="selectProvince('${p}')">${p}</button>`).join('');if(!document.getElementById('selectedProvince').dataset.ready){selectProvince('القاهرة');document.getElementById('selectedProvince').dataset.ready='1'}}
+function selectProvince(name){document.getElementById('selectedProvince').textContent=name;document.getElementById('needProvince').value=name;const reports=getUserReports().filter(r=>r.province===name);const demos=demoByProvince[name]||[];const reportCount=reports.length+demos.length;const priorities=demos.filter(d=>d[1]===3).length+reports.filter(r=>Number(r.urgency)>=3).length;const verified=reports.filter(r=>r.status==='قيد التحقق').length;document.getElementById('reportCount').textContent=reportCount;document.getElementById('priorityCount').textContent=priorities;document.getElementById('verifiedCount').textContent=verified;document.getElementById('provinceSubtitle').textContent=`رصد ${reportCount} احتياج/مثال في لوحة العرض · وتتحدث النتائج مع كل مشاركة`;document.getElementById('provinceBadge').textContent=reportCount?`${reportCount} احتياج في العرض`:'بانتظار المشاركات';const list=document.getElementById('priorityList');const rows=[];demos.forEach(d=>rows.push(`<div class="priority-row"><span class="row-label">${escapeHTML(d[0])}</span><span class="row-meta">مثال عرض · أولوية ${d[1]===3?'مرتفعة':'متوسطة'}</span><b class="row-num">${d[1]}</b></div>`));demoNeedRecords.filter(r=>r[0]===name).slice(0,5).forEach(r=>rows.push(`<div class="priority-row"><span class="row-label">${escapeHTML(r[1])}</span><span class="row-meta">${escapeHTML(r[5])} · مؤشر تجريبي</span><b class="row-num">${r[3]}</b></div>`));reports.slice(-5).reverse().forEach(r=>rows.push(`<div class="priority-row"><span class="row-label">${escapeHTML(r.sector)} · ${escapeHTML(r.problem)}</span><span class="row-meta">رصدت من المواطن · ${escapeHTML(r.status)}</span><b class="row-num">${Number(r.urgency)||1}</b></div>`));list.innerHTML=rows.length?rows.join(''):'<div class="need-note">لا توجد مشاركة مسجلة في هذا النموذج بعد. اختر قطاعا وسجل أول احتياجك لهذه المحافظة.</div>';document.querySelectorAll('.province-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim()===name));renderMapSelection(name)}
+function submitNeed(e){e.preventDefault();const province=needProvince.value,sector=needSector.value,problem=needProblem.value.trim(),urgency=needUrgency.value,details=needDetails.value.trim();if(!province||!sector||!problem){showToast('أكمل البيانات الأساسية أولا');return}const report={id:'MZN-'+Date.now().toString().slice(-6),province,sector,problem,urgency,details,status:'قيد التحقق',createdAt:new Date().toISOString()};saveUserReport(report);document.getElementById('totalReports').textContent=getUserReports().length;selectProvince(province);updateAnalytics();showToast('تم تسجيل الاحتياج في النموذج التجريبي بنجاح');document.getElementById('needForm').reset();needProvince.value=province;go('provinces')}
+function resetNeedForm(){document.getElementById('needForm').reset()}
+function updateAnalytics(){const reports=getUserReports();const counts={};reports.forEach(r=>counts[r.sector]=(counts[r.sector]||0)+1);document.getElementById('totalReports').textContent=reports.length;const demoCounts={};Object.values(demoByProvince).forEach(arr=>arr.forEach(d=>demoCounts[d[0]]=(demoCounts[d[0]]||0)+1));const combined={...demoCounts};Object.keys(counts).forEach(k=>combined[k]=(combined[k]||0)+counts[k]);const entries=Object.entries(combined).sort((a,b)=>b[1]-a[1]);document.getElementById('topSector').textContent=entries[0]?entries[0][0]:'—';document.getElementById('sectorMatrix').innerHTML=entries.slice(0,8).map(([name,n])=>`<div class="matrix-item"><h4>${name}</h4><p>${n} مشاركة/مثال في لوحة العرض</p><div class="matrix-bar"><i style="width:${Math.min(100,20+n*12)}%"></i></div></div>`).join('') || '<div class="need-note" style="grid-column:1/-1">بانتظار مشاركات المواطنين.</div>'}
+
+
+const demoNeedRecords = [
+['القاهرة','الطرق والنقل','تحسين محاور الحركة والنقل','4','مرتفع','قيد التحقق'],['القاهرة','الصرف الصحي','رفع كفاءة شبكات الصرف في مناطق متفرقة','3','متوسط','رصد'],
+['الجيزة','مياه الشرب','تحسين ضغط واستمرارية مياه الشرب','5','مرتفع','تحقق'],['القليوبية','الصرف الصحي','رفع كفاءة الشبكات ومحطات المعالجة','3','متوسط','رصد'],
+['الإسكندرية','الطرق والنقل','صيانة المحاور والطرق الداخلية','5','مرتفع','تقدير'],['الإسكندرية','الصرف الصحي','تحسين شبكات الصرف','3','متوسط','رصد'],['البحيرة','مياه الشرب','تحسين جودة واستمرارية الخدمة','3','متوسط','رصد'],['مطروح','مياه الشرب','زيادة إتاحة المياه للمناطق المحتاجة','4','مرتفع','تحقق'],
+['الغربية','الطرق والنقل','رفع كفاءة الطرق المحلية','3','متوسط','رصد'],['المنوفية','الصرف الصحي','استكمال شبكات الصرف','3','متوسط','رصد'],['الدقهلية','مياه الشرب','تحسين الشبكات','3','متوسط','رصد'],['دمياط','الطرق والنقل','صيانة الطرق الداخلية','3','متوسط','رصد'],
+['كفر الشيخ','الزراعة والري','تطوير شبكات الري والمساقي','5','مرتفع','تحقق'],['الشرقية','التعليم','رفع كفاءة المدارس والفصول','4','مرتفع','تحقق'],['بورسعيد','الطرق والنقل','تحسين الحركة داخل الأحياء','3','متوسط','رصد'],['الإسماعيلية','مياه الشرب','رفع كفاءة الشبكات','3','متوسط','رصد'],['السويس','الصرف الصحي','تحسين كفاءة الشبكات','3','متوسط','رصد'],
+['شمال سيناء','الطرق والنقل','تحسين الربط والطرق الداخلية','5','مرتفع','تحقق'],['جنوب سيناء','السياحة والخدمات','رفع كفاءة الخدمات السياحية','3','متوسط','رصد'],['الفيوم','الزراعة والري','تطوير الري وتحسين الإنتاجية','5','مرتفع','تحقق'],['بني سويف','التعليم','رفع كفاءة المنشآت التعليمية','3','متوسط','رصد'],
+['المنيا','الصحة','تحسين إتاحة الخدمات الصحية','5','مرتفع','تحقق'],['المنيا','التعليم','رفع كفاءة المدارس والفصول','4','مرتفع','قيد التحقق'],['أسيوط','الصحة','تحسين إتاحة الخدمات الصحية','5','مرتفع','تقدير'],['أسيوط','الطرق والنقل','رفع كفاءة الطرق الداخلية','3','متوسط','رصد'],
+['سوهاج','التعليم','تحسين البنية التعليمية','5','مرتفع','تحقق'],['سوهاج','الصحة','تحسين إتاحة الخدمات الصحية','3','متوسط','رصد'],['قنا','الزراعة والري','تحسين كفاءة الري','3','متوسط','رصد'],['الأقصر','الطرق والنقل','تحسين الطرق المرتبطة بالمناطق الحيوية','3','متوسط','رصد'],['أسوان','مياه الشرب','تحسين استدامة المياه','3','متوسط','رصد'],['الوادي الجديد','الزراعة والري','دعم كفاءة الري والتوسع الزراعي','5','مرتفع','تحقق'],['البحر الأحمر','مياه الشرب','رفع استدامة الإمداد بالمياه','3','متوسط','رصد']
+];
+const govOrder={};provinces.forEach((p,i)=>govOrder[p]=i);
+function escapeHTML(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+function demoStats(name){const rows=demoNeedRecords.filter(r=>r[0]===name);return {count:rows.length,high:rows.filter(r=>r[4]==='مرتفع').length,verify:rows.filter(r=>r[5]==='قيد التحقق'||r[5]==='تحقق').length,score:Math.min(98,62+rows.length*8+rows.filter(r=>r[4]==='مرتفع').length*4)} }
+function renderMapSelection(name){document.getElementById('mapProvinceName').textContent=name;const s=demoStats(name);document.getElementById('mapReports').textContent=s.count;document.getElementById('mapPriority').textContent=s.high;document.getElementById('mapVerified').textContent=s.verify;document.getElementById('mapScore').textContent=s.score;const rows=demoNeedRecords.filter(r=>r[0]===name);const grouped={};rows.forEach(r=>grouped[r[1]]=(grouped[r[1]]||0)+1);const list=Object.entries(grouped).sort((a,b)=>b[1]-a[1]);document.getElementById('mapSectors').innerHTML=list.length?list.slice(0,3).map(([sec,n])=>`<div class="map-sector"><b>${escapeHTML(sec)}</b><span>${n} احتياج في العينة · يمكن أن يرتفع بالبيانات الفعلية</span></div>`).join(''):'<div class="map-sector"><b>بانتظار البيانات</b><span>لم تصل مشاركات تجريبية لهذه المحافظة بعد.</span></div>';document.querySelectorAll('.gov').forEach(el=>el.classList.toggle('active',el.dataset.gov===name))}
+function bindMap(){document.querySelectorAll('.gov').forEach(el=>el.addEventListener('click',()=>{selectProvince(el.dataset.gov);go('provinces');renderMapSelection(el.dataset.gov)}))}
+function populateDecisionFilters(){const g=document.getElementById('dGovFilter'), s=document.getElementById('dSectorFilter');if(!g||!s)return;g.innerHTML='<option value="all">كل المحافظات</option>'+provinces.map(p=>`<option value="${escapeHTML(p)}">${escapeHTML(p)}</option>`).join('');s.innerHTML='<option value="all">كل القطاعات</option>'+sectors.map(x=>`<option value="${escapeHTML(x)}">${escapeHTML(x)}</option>`).join('')}
+function statusClass(x){if(x==='تحقق')return 's-verified'; if(x==='تقدير')return 's-budget'; if(x==='قيد التحقق')return 's-review'; return 's-track'}
+function renderDecision(){const gf=document.getElementById('dGovFilter')?.value||'all', sf=document.getElementById('dSectorFilter')?.value||'all', q=(document.getElementById('dSearch')?.value||'').trim();let rows=demoNeedRecords.filter(r=>(gf==='all'||r[0]===gf)&&(sf==='all'||r[1]===sf)&&(!q||r[2].includes(q)));const counts={};demoNeedRecords.forEach(r=>counts[r[1]]=(counts[r[1]]||0)+1);const top=Object.entries(counts).sort((a,b)=>b[1]-a[1])[0];document.getElementById('dTotal').textContent=demoNeedRecords.length;document.getElementById('dHigh').textContent=demoNeedRecords.filter(r=>r[4]==='مرتفع').length;document.getElementById('dSector').textContent=top?top[0]:'—';const body=document.getElementById('decisionRows');body.innerHTML=rows.map((r,i)=>`<tr><td>${escapeHTML(r[0])}</td><td>${escapeHTML(r[1])}</td><td>${escapeHTML(r[2])}</td><td class="decision-score">${r[3]}</td><td class="decision-score">${r[4]}</td><td><span class="status-pill ${statusClass(r[5])}">${r[5]}</span></td></tr>`).join('')||'<tr><td colspan="6" style="text-align:center;color:#9fb4bc;padding:20px">لا توجد نتائج مطابقة للفلاتر الحالية.</td></tr>'}
+
+function toggleTheme(){const dark=!document.body.classList.contains('dark');document.body.classList.toggle('dark',dark);localStorage.setItem('mawazentyTheme',dark?'dark':'light');document.getElementById('themeIcon').innerHTML=dark?'<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>':'<path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"/>'}
+// ===== مساعد موازنتي: بحث ذكي داخل محتوى الموقع وبيانات المشاركات الحالية =====
+let chatReady=false;
+function toggleChat(){const p=document.getElementById('chatPanel');if(!p)return;p.classList.toggle('open');if(p.classList.contains('open')&&!chatReady){chatReady=true;appendChat('bot','اهلا بك في مساعد موازنتي 👋\nأقرأ بيانات الموقع الحالية والمشاركات الجديدة المحفوظة في المتصفح. اسألني عن الأرقام، المحافظات، الاحتياجات أو طريقة التسجيل.');document.getElementById('chatInput')?.focus()}}
+function chatKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat()}}
+function appendChat(type,text){const box=document.getElementById('chatMessages');if(!box)return;const div=document.createElement('div');div.className='chat-msg '+type;div.innerHTML=escapeHTML(text).replace(/\n/g,'<br>');box.appendChild(div);box.scrollTop=box.scrollHeight}
+function quickChat(q){const i=document.getElementById('chatInput');i.value=q;sendChat()}
+function normalizeArabic(t){return String(t||'').toLowerCase().replace(/[إأآا]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[ًٌٍَُِّْـ]/g,'').replace(/[^\u0600-\u06ff0-9a-zA-Z\s]/g,' ')}
+function currentSiteData(){const reports=getUserReports();const selected=document.getElementById('selectedProvince')?.textContent||'القاهرة';return {reports,selected,total:reports.length,text:document.body.innerText.slice(0,30000)}}
+function smartAnswer(q){const n=normalizeArabic(q),d=currentSiteData();
+ if(/سجل|اسجل|كيف.*احتياج|اضيف.*احتياج|ارسال.*احتياج/.test(n))return 'للتسجيل: افتح «احتياجي»، اختر المحافظة والقطاع، اكتب المشكلة وحدد درجة الاستعجال ثم أرسل الاحتياج. أنت لا تحدد التكلفة؛ تأتي لاحقا بعد التحقق والتقدير الفني من الجهة المختصة.';
+ if(/مراحل|دوره.*موازنه|دورة.*الموازنه|8 مراحل|ثمان مراحل/.test(n))return 'المسار داخل موازنتي من 8 مراحل: المواطن → الاحتياج → التحقق → التكلفة → الأولوية → الموازنة → المتابعة → التعلم.';
+ if(/صانع القرار|لوحه القرار|لوحة القرار/.test(n))return 'لوحة صانع القرار تجمع المحافظة والقطاع والاحتياج والتكرار والأولوية والحالة، وهي نموذج محاكاة وليست قرارا ماليا آليا.';
+ if(/تعليم|مخصصات.*تعليم/.test(n))return 'مخصصات التعليم في الموازنة 2026/2027: 1,229.7 مليار جنيه، بزيادة 186.6 مليار جنيه وبنسبة 17.9% عن العام السابق.';
+ if(/صحه|الصحه|مخصصات.*صح/.test(n))return 'مخصصات الصحة في الموازنة 2026/2027: 862.9 مليار جنيه، بزيادة 244.9 مليار جنيه وبنسبة 39.6% عن العام السابق.';
+ if(/اجور|الحد.*ادنى|حافز|علاوه/.test(n))return 'الأجور وتعويضات العاملين: 822.8 مليار جنيه. الحد الأدنى للأجور: 8,000 جنيه. الحافز الإضافي: 750 جنيها شهريا.';
+ if(/دعم|حمايه|حماية/.test(n))return 'إجمالي الدعم والمنح والمزايا الاجتماعية: 836.8 مليار جنيه. من أبرز البنود: 178.3 للسلع التموينية، 104.2 للكهرباء، و69.1 للقمح المحلي.';
+ if(/استثمار|الاستثمارات/.test(n))return 'إجمالي الاستثمارات الكلية: 3.76 تريليون جنيه، منها 2.2 تريليون استثمارات خاصة و1.56 تريليون استثمارات عامة.';
+ if(/دين|الدين/.test(n))return 'المستهدف خفض دين أجهزة الموازنة إلى 78.1% من الناتج المحلي الإجمالي بحلول يونيو 2027.';
+ if(/عجز/.test(n))return 'العجز الكلي في جدول الموازنة المعروض بالموقع يساوي نحو 1,202,641 مليون جنيه بالسالب، بينما يوضح المؤشر الأولي فائضا قبل فوائد الدين.';
+ if(/فائض.*اول|فائض.*أول|فائض اولي/.test(n))return 'الفائض الأولي هو ما يتبقى بعد المصروفات الأولية وقبل احتساب فوائد الدين ضمن هذا المؤشر، والرقم الوارد في جدول الموازنة 1,217,181 مليون جنيه.';
+ const found=provinces.find(p=>n.includes(normalizeArabic(p)));
+ if(found){const demo=demoNeedRecords.filter(r=>r[0]===found),user=d.reports.filter(r=>r.province===found);const secs=[...new Set(demo.map(r=>r[1]).concat(user.map(r=>r.sector)))];let a=`ملف ${found}: ${demo.length+user.length} احتياج/مثال حاليا.`;if(secs.length)a+=` القطاعات الظاهرة: ${secs.slice(0,6).join('، ')}.`;if(user.length)a+=` توجد ${user.length} مشاركة جديدة محفوظة.`;return a+' البيانات تجريبية إلى أن يتم التحقق الرسمي.'}
+ if(/مشاركتي|احتياجاتي|بياناتي/.test(n))return d.total?`لديك ${d.total} مشاركة محفوظة في هذا المتصفح ضمن النموذج التجريبي.`:'لا توجد مشاركات جديدة محفوظة حاليا. افتح «احتياجي» وسجل أول مشاركة.';
+ const stop=['من','في','ما','هو','هي','عن','كيف','هل','هذا','هذه','الى','إلى','أي','اي','كم','لماذا'];const terms=n.split(/\s+/).filter(x=>x.length>2&&!stop.includes(x));let best='',score=0;for(const ch of d.text.split(/[\n.!؟]+/).map(x=>x.trim()).filter(x=>x.length>25)){const cn=normalizeArabic(ch);let sc=0;terms.forEach(t=>{if(cn.includes(t))sc++});if(sc>score){score=sc;best=ch}}if(score)return `وجدت هذا في بيانات الموقع: ${best.slice(0,560)}${best.length>560?'…':''}`;
+ return 'أستطيع الإجابة بدقة عن بيانات موازنتي الحالية، ويمكنني إرشادك إلى مكان التسجيل أو العثور على معلومات داخل الموقع. أما الأسئلة العامة الواسعة خارج بيانات الموقع فتحتاج ربطا بمحرك ذكاء اصطناعي عبر خادم آمن.'}
+function sendChat(){const i=document.getElementById('chatInput'),p=document.getElementById('chatPanel');if(!i||!p)return;const q=i.value.trim();if(!q)return;if(!p.classList.contains('open'))toggleChat();appendChat('user',q);i.value='';const box=document.getElementById('chatMessages');const t=document.createElement('div');t.className='chat-msg bot';t.id='typingMsg';t.textContent='أراجع بيانات الموقع…';box.appendChild(t);box.scrollTop=box.scrollHeight;setTimeout(()=>{document.getElementById('typingMsg')?.remove();appendChat('bot',smartAnswer(q))},300)}
+function syncTopNav(){const ids=['home','need','provinces','overview','analytics','decision','participation'];let current='home';const y=window.scrollY+175;ids.forEach(id=>{const el=document.getElementById(id);if(el&&y>=el.offsetTop)current=id});document.querySelectorAll('.topnav-link').forEach(a=>a.classList.toggle('active',a.dataset.target===current))}
+
+function initTheme(){if(localStorage.getItem('mawazentyTheme')==='dark')document.body.classList.add('dark')}
+
+function showDataTab(name,btn){document.querySelectorAll('.data-panel').forEach(p=>p.classList.add('hidden'));const el=document.getElementById('dataTab-'+name);if(el)el.classList.remove('hidden');document.querySelectorAll('.data-tabs .tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active')}
+
+// Make navigation react like an app
+window.addEventListener('scroll',syncTopNav,{passive:true});
+initTheme();renderProvinceSelect();renderProvinces();populateDecisionFilters();renderDecision();bindMap();updateAnalytics();calcGame();renderMapSelection('القاهرة');syncTopNav();
+</script>
+</body></html>
